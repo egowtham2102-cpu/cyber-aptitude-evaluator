@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assessment Report - John Doe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080c14;
+      --panel: rgba(17, 25, 40, 0.75);
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #3b82f6;
+      --excellent: #10b981;
+      --good: #84cc16;
+      --borderline: #f59e0b;
+      --weak: #ef4444;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Outfit", "Inter", system-ui, sans-serif;
+      background: radial-gradient(circle at 50% 0%, #151e33 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 24px 64px; }
+    .hero {
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .eyebrow {
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    h1 { margin: 12px 0 6px; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; }
+    .subtitle { color: var(--muted); margin: 0 0 28px; font-size: 15px; }
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .metric {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      transition: all 0.2s ease;
+    }
+    .metric:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+    .metric label { display: block; color: var(--muted); font-size: 13px; margin-bottom: 8px; font-weight: 500; }
+    .metric strong { font-size: 26px; font-weight: 700; color: #fff; }
+    .pill {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pill.excellent { background: rgba(16, 185, 129, 0.15); color: var(--excellent); border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pill.good { background: rgba(132, 204, 22, 0.15); color: var(--good); border: 1px solid rgba(132, 204, 22, 0.25); }
+    .pill.borderline { background: rgba(245, 158, 11, 0.15); color: var(--borderline); border: 1px solid rgba(245, 158, 11, 0.25); }
+    .pill.weak { background: rgba(239, 68, 68, 0.15); color: var(--weak); border: 1px solid rgba(239, 68, 68, 0.25); }
+    .proctor-audit-section {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+    }
+    .proctor-audit-section h3 {
+      margin: 0 0 14px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .proctor-alert {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .proctor-alert:last-child { margin-bottom: 0; }
+    .proctor-alert.warning {
+      background: rgba(245, 158, 11, 0.08);
+      border-color: rgba(245, 158, 11, 0.2);
+      color: #fde047;
+    }
+    .proctor-alert.critical {
+      background: rgba(239, 68, 68, 0.08);
+      border-color: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+    }
+    .proctor-icon { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; flex-shrink: 0; }
+    .section { margin-top: 36px; }
+    .section h2 { font-size: 22px; margin-bottom: 16px; font-weight: 700; letter-spacing: -0.01em; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    th, td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; }
+    td { font-size: 15px; }
+    .question-card {
+      background: var(--panel);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .question-card header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .q-index {
+      font-weight: 800;
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+    .q-type, .q-category, .q-score, .q-index {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .q-type { background: rgba(255,255,255,0.06); color: #fff; }
+    .q-category { background: rgba(255,255,255,0.03); color: var(--muted); border: 1px solid var(--border); }
+    .q-score { margin-left: auto; background: rgba(16, 185, 129, 0.12); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.2); font-size: 13px; font-weight: 700; }
+    .prompt { margin: 0 0 20px; font-size: 16px; font-weight: 500; color: #f8fafc; }
+    .answer-block, .feedback-block {
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-top: 14px;
+    }
+    .answer-block p { margin: 0; color: #cbd5e1; font-size: 14.5px; white-space: pre-line; }
+    .feedback-block p { margin: 0 0 12px; color: #cbd5e1; font-size: 14.5px; }
+    h4 { margin: 0 0 10px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+    .tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-size: 12px; padding: 4px 10px; border-radius: 999px; font-weight: 600; }
+    .tag.strength { background: rgba(16, 185, 129, 0.1); color: var(--excellent); border: 1px solid rgba(16, 185, 129, 0.18); }
+    .tag.gap { background: rgba(239, 68, 68, 0.1); color: var(--weak); border: 1px solid rgba(239, 68, 68, 0.18); }
+    .recommendation {
+      margin-top: 20px;
+      padding: 16px 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      background: rgba(59, 130, 246, 0.08);
+      font-size: 15.5px;
+      color: #93c5fd;
+    }
+    .recommendation strong { color: #fff; }
+    @media print {
+      body { background: white; color: #111; }
+      .hero, .question-card, table { box-shadow: none; background: white; border-color: #ddd; }
+      .metric, .answer-block, .feedback-block { background: #fafafa; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Cyber Aptitude Evaluator</div>
+      <h1>John Doe</h1>
+      <p class="subtitle">Ethical Hacker - Submitted 2026-07-25T06:07:07.509034+00:00</p>
+      <div class="score-grid">
+        <div class="metric">
+          <label>Overall Score</label>
+          <strong>0.0 / 100.0</strong>
+        </div>
+        <div class="metric">
+          <label>Percentage</label>
+          <strong><span class="pill weak">0.0%</span></strong>
+        </div>
+        <div class="metric">
+          <label>Questions</label>
+          <strong>20</strong>
+        </div>
+      </div>
+      <div class="recommendation">
+        <strong>Recommendation:</strong> Do Not Proceed - significant gaps relative to role requirements.
+      </div>
+      
+    </section>
+
+    <section class="section">
+      <h2>Category Breakdown</h2>
+      <table>
+        <thead>
+          <tr><th>Category</th><th>Score</th><th>Percentage</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Penetration Testing</td>
+          <td>0.0 / 100.0</td>
+          <td><span class="pill weak">0.0%</span></td>
+        </tr></tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Question-Level Evaluation</h2>
+      
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q1</span>
+            <span class="q-type">Log Analysis</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0 / 5</span>
+          </header>
+          <p class="prompt">Which interpretation best fits this Linux log sequence?</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: B) Privilege use followed by potentially suspicious script execution</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the underlying concept in the rubric.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q2</span>
+            <span class="q-type">Threat Hunting</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0.0 / 5</span>
+          </header>
+          <p class="prompt">You suspect lateral movement related to Penetration Testing after seeing connections from host-2e7d34.corp.local to 183.107.37.126. Describe a structured threat hunt.</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>No answer provided.</p>
+            <div class="tags">
+              
+              <span class="tag gap">Provide an answer to receive credit.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q3</span>
+            <span class="q-type">Code Analysis</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0 / 5</span>
+          </header>
+          <p class="prompt">What is the most critical security issue in this Python-related code snippet?</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: B) TLS verification disabled and privileged role assignment without authorization checks</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the underlying concept in the rubric.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q4</span>
+            <span class="q-type">Mcq</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0 / 5</span>
+          </header>
+          <p class="prompt">During review of activity involving Python, analysts observe a connection from 44.206.44.57 to 188.57.148.172 associated with CVE-2023-95038. What is the best immediate action?</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: B) Validate the alert, isolate affected assets if confirmed, and preserve evidence</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the underlying concept in the rubric.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q5</span>
+            <span class="q-type">Fill Blank</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0.0 / 5</span>
+          </header>
+          <p class="prompt">A analyst needs to identify the host responsible for suspicious traffic to 4.30.75.36. The device MAC address is c3:e9:5a:9f:9a:18. Which command on a managed switch shows the port mapping?</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: show mac address-table</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the required terminology (Expected: show mac address-table).</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q6</span>
+            <span class="q-type">Match Following</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0.0 / 5</span>
+          </header>
+          <p class="prompt">Match each Penetration Testing term to its best description.</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Correct matches:
+SIEM -&gt; Centralized log correlation and alerting platform
+IOC -&gt; Artifact indicating potential compromise
+MTTR -&gt; Mean time to remediate or respond
+EDR -&gt; Endpoint telemetry and response tooling</p>
+            <div class="tags">
+              
+              <span class="tag gap">Mismatch in term assignments</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q7</span>
+            <span class="q-type">Terminal Analysis</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0 / 5</span>
+          </header>
+          <p class="prompt">Based on this terminal session, what attack behavior is most likely occurring?</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: B) Remote payload retrieval with scheduled persistence</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the underlying concept in the rubric.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q8</span>
+            <span class="q-type">Multi Select</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0.0 / 5</span>
+          </header>
+          <p class="prompt">Which actions are appropriate when investigating a Linux alert tied to user devans from 10.203.70.183? Select all that apply.</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. No options selected.</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the topic and select all correct choices.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q9</span>
+            <span class="q-type">Scenario</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0.0 / 5</span>
+          </header>
+          <p class="prompt">At 02:20 UTC, monitoring detects abnormal authentication for mchen from 55.181.38.101 followed by access to a sensitive Linux system. Describe your investigation and containment plan for the first 30 minutes.</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>No answer provided.</p>
+            <div class="tags">
+              
+              <span class="tag gap">Provide an answer to receive credit.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q10</span>
+            <span class="q-type">Mcq</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0 / 5</span>
+          </header>
+          <p class="prompt">During review of activity involving SQL, analysts observe a connection from 47.106.208.187 to 130.163.89.167 associated with CVE-2024-67874. What is the best immediate action?</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: B) Validate the alert, isolate affected assets if confirmed, and preserve evidence</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the underlying concept in the rubric.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q11</span>
+            <span class="q-type">Mcq</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0 / 5</span>
+          </header>
+          <p class="prompt">During review of activity involving Penetration Testing, analysts observe a connection from 78.101.87.157 to 40.179.29.67 associated with CVE-2024-55626. What is the best immediate action?</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: B) Validate the alert, isolate affected assets if confirmed, and preserve evidence</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the underlying concept in the rubric.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q12</span>
+            <span class="q-type">Code Analysis</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0 / 5</span>
+          </header>
+          <p class="prompt">What is the most critical security issue in this SQL-related code snippet?</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: B) TLS verification disabled and privileged role assignment without authorization checks</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the underlying concept in the rubric.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q13</span>
+            <span class="q-type">Incident Response</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0.0 / 5</span>
+          </header>
+          <p class="prompt">A host at 10.25.236.193 is flagged for malware linked to CVE-2020-54981. Outline your incident response steps from detection through recovery.</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>No answer provided.</p>
+            <div class="tags">
+              
+              <span class="tag gap">Provide an answer to receive credit.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q14</span>
+            <span class="q-type">Aptitude</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0 / 5</span>
+          </header>
+          <p class="prompt">A team must prioritize five SQL tasks with limited staff. Which approach best reflects strong operational judgment?</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: B) Prioritize by business impact, exploitability, and evidence strength</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the underlying concept in the rubric.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q15</span>
+            <span class="q-type">Multi Select</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0.0 / 5</span>
+          </header>
+          <p class="prompt">Which actions are appropriate when investigating a Python alert tied to user jsmith from 10.157.30.173? Select all that apply.</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. No options selected.</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the topic and select all correct choices.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q16</span>
+            <span class="q-type">True False</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0.0 / 5</span>
+          </header>
+          <p class="prompt">True or False: For SQL, blocking 40.198.54.86 without investigation is always sufficient to close an incident.</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: False</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the concepts behind this True/False assertion.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q17</span>
+            <span class="q-type">Match Following</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0.0 / 5</span>
+          </header>
+          <p class="prompt">Match each Penetration Testing term to its best description.</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Correct matches:
+SIEM -&gt; Centralized log correlation and alerting platform
+IOC -&gt; Artifact indicating potential compromise
+MTTR -&gt; Mean time to remediate or respond
+EDR -&gt; Endpoint telemetry and response tooling</p>
+            <div class="tags">
+              
+              <span class="tag gap">Mismatch in term assignments</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q18</span>
+            <span class="q-type">Scenario</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0.0 / 5</span>
+          </header>
+          <p class="prompt">At 02:20 UTC, monitoring detects abnormal authentication for jsmith from 88.57.66.162 followed by access to a sensitive Python system. Describe your investigation and containment plan for the first 30 minutes.</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>No answer provided.</p>
+            <div class="tags">
+              
+              <span class="tag gap">Provide an answer to receive credit.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q19</span>
+            <span class="q-type">Aptitude</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0 / 5</span>
+          </header>
+          <p class="prompt">A team must prioritize five Penetration Testing tasks with limited staff. Which approach best reflects strong operational judgment?</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: B) Prioritize by business impact, exploitability, and evidence strength</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the underlying concept in the rubric.</span>
+            </div>
+          </div>
+        </article>
+        <article class="question-card">
+          <header>
+            <span class="q-index">Q20</span>
+            <span class="q-type">True False</span>
+            <span class="q-category">Penetration Testing</span>
+            <span class="q-score">0.0 / 5</span>
+          </header>
+          <p class="prompt">True or False: For Penetration Testing, blocking 131.112.18.65 without investigation is always sufficient to close an incident.</p>
+          <div class="answer-block">
+            <h4>Candidate Response</h4>
+            <p>No response provided.</p>
+          </div>
+          <div class="feedback-block">
+            <h4>Evaluator Feedback</h4>
+            <p>Incorrect. Expected: False</p>
+            <div class="tags">
+              
+              <span class="tag gap">Review the concepts behind this True/False assertion.</span>
+            </div>
+          </div>
+        </article>
+    </section>
+  </div>
+</body>
+</html>

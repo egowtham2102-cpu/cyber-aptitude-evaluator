@@ -1,0 +1,32 @@
+[
+  {
+    "id": "usr_02b873ef6803",
+    "name": "Alex Morgan",
+    "email": "alex.morgan@cyber.io",
+    "password_hash": "scrypt:32768:8:1$BQLWz5awelqufyUn$2dbbbc102ddbb1cf48fac57e71c84af5e8db87ffc73d75749cc91b26c9920a079ef0bebf60d0598f635c4228e2fda028f3380d976ee52edd32df12dbec2da019",
+    "department": "Cybersecurity",
+    "role": "SOC Analyst",
+    "created_at": "2026-07-25T08:17:43.932137+00:00",
+    "last_login": "2026-07-25T08:19:02.297532+00:00"
+  },
+  {
+    "id": "usr_1e5b833c8137",
+    "name": "Demo Candidate",
+    "email": "demo@test.com",
+    "password_hash": "scrypt:32768:8:1$VMqxm6Fqf7MR49N0$4b93fbf502f0d9a2002fba95e861d8fa1506e83e33a3d3a676d62762f928d391e8cb1d7228cab0acdaca714485e9e5425e2c0bc097cf5b403ad16605c4c4b707",
+    "department": "Cybersecurity",
+    "role": "Candidate",
+    "created_at": "2026-07-25T08:17:44.169572+00:00",
+    "last_login": null
+  },
+  {
+    "id": "usr_492dc2317302",
+    "name": "System Security Officer",
+    "email": "admin@cyber.io",
+    "password_hash": "scrypt:32768:8:1$G4IMGZoUvWid4U2d$bc5f084a259b502dee4b92826f2757078235a54131aa4b248d9044c60f111d5bc7de1b2c9a35c72f7609520397bc7d9522bbeae1746b9cb3a03266c5c9eafe0b",
+    "department": "DevOps / Cloud Security",
+    "role": "Security Engineer",
+    "created_at": "2026-07-25T08:17:44.378849+00:00",
+    "last_login": null
+  }
+]

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Aptitude Evaluator</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-kicker">BSCDS26-AICR-02</span>
+        <h1>Cyber Aptitude Evaluator</h1>
+        <p>Automated technical screening from any security job description</p>
+      </div>
+      <div class="header-controls">
+        <div id="user-session-badge" class="user-session-badge hidden">
+          <span class="user-avatar" id="user-avatar">?</span>
+          <div class="user-info-text">
+            <span id="user-display-name">Guest</span>
+            <span id="user-dept-tag" class="user-dept-tag">Cybersecurity</span>
+          </div>
+          <button type="button" class="btn-secondary btn-sm" id="user-history-btn">My Attempts</button>
+          <button type="button" class="btn-secondary btn-sm" id="user-logout-btn">Logout</button>
+        </div>
+        <button type="button" class="btn-secondary" id="admin-panel-toggle-btn">Admin Dashboard</button>
+        <div class="step-indicator" aria-hidden="true">
+          <span class="step-dot active" data-step="1"></span>
+          <span class="step-dot" data-step="2"></span>
+          <span class="step-dot" data-step="3"></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- USER AUTH GATE -->
+      <section id="auth-panel" class="panel auth-gate">
+        <div class="auth-layout">
+          <div class="auth-brand-side">
+            <span class="brand-kicker">BSCDS26-AICR-02</span>
+            <h2>Cyber Aptitude Portal</h2>
+            <p>Professional portal for AI-calibrated cybersecurity technical evaluation.</p>
+            
+            <ul class="auth-features">
+              <li><strong>Local File Persistence:</strong> Credentials saved to <code>sessions/users.json</code></li>
+              <li><strong>Auto Session Restore:</strong> Remembers your sign-in for seamless returning login</li>
+              <li><strong>Personalized Assessments:</strong> Tailored test generation based on job descriptions</li>
+              <li><strong>Attempt History:</strong> Track scores and view performance reports anytime</li>
+            </ul>
+
+            <div class="auth-storage-pill">
+              <span class="storage-dot"></span> Localhost Storage Active &amp; Secured
+            </div>
+          </div>
+
+          <div class="auth-form-side">
+            <div class="auth-card auth-card-pro">
+              <!-- Quick Demo Account Fill Pills -->
+              <div class="demo-accounts-bar">
+                <span class="demo-label">⚡ Quick Fill Demo:</span>
+                <div class="demo-pills">
+                  <button type="button" class="demo-pill" data-email="alex.morgan@cyber.io" data-pass="Cyber@123" title="Fill Alex Morgan account">Alex Morgan</button>
+                  <button type="button" class="demo-pill" data-email="demo@test.com" data-pass="demo123" title="Fill Demo account">Demo Candidate</button>
+                </div>
+              </div>
+
+              <div class="auth-tabs" role="tablist">
+                <button type="button" class="auth-tab active" data-auth-tab="login" role="tab">Sign In</button>
+                <button type="button" class="auth-tab" data-auth-tab="signup" role="tab">Create Account</button>
+              </div>
+
+              <form id="user-login-form" class="auth-form active" data-auth-form="login">
+                <div class="form-group">
+                  <label for="login-email">Email Address</label>
+                  <input id="login-email" type="email" placeholder="you@company.com" autocomplete="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="login-password">Password</label>
+                  <div class="password-input-wrap">
+                    <input id="login-password" type="password" placeholder="Enter password" autocomplete="current-password" required />
+                    <button type="button" class="btn-password-toggle" data-toggle="login-password" aria-label="Toggle password visibility">👁️</button>
+                  </div>
+                </div>
+                <label class="remember-row">
+                  <input type="checkbox" id="remember-me" checked />
+                  <span>Keep me signed in on this device (Save to localStorage)</span>
+                </label>
+                <div id="login-error" class="status-banner error hidden" role="alert"></div>
+                <button type="submit" class="btn-primary auth-submit" id="login-submit-btn">
+                  <span>Sign In</span>
+                </button>
+              </form>
+
+              <form id="user-signup-form" class="auth-form hidden" data-auth-form="signup">
+                <div class="form-group">
+                  <label for="signup-name">Full Name</label>
+                  <input id="signup-name" type="text" placeholder="Alex Morgan" autocomplete="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="signup-email">Email Address</label>
+                  <input id="signup-email" type="email" placeholder="you@company.com" autocomplete="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="signup-dept">Department / Track</label>
+                  <select id="signup-dept" required>
+                    <option value="Cybersecurity">Cybersecurity (SOC / Threat Hunting)</option>
+                    <option value="Software Engineering">Software Engineering (AppSec)</option>
+                    <option value="DevOps / Cloud">DevOps / Cloud Security</option>
+                    <option value="AI / Machine Learning">AI / Machine Learning Security</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="signup-password">Password</label>
+                  <div class="password-input-wrap">
+                    <input id="signup-password" type="password" placeholder="Min. 6 characters" autocomplete="new-password" required minlength="6" />
+                    <button type="button" class="btn-password-toggle" data-toggle="signup-password" aria-label="Toggle password visibility">👁️</button>
+                  </div>
+                  <div class="strength-bar-wrap hidden" id="password-strength-wrap">
+                    <div class="strength-bar" id="password-strength-bar"></div>
+                    <span class="strength-label" id="password-strength-label">Password strength</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="signup-confirm">Confirm Password</label>
+                  <input id="signup-confirm" type="password" placeholder="Re-enter password" autocomplete="new-password" required />
+                </div>
+                <div id="signup-error" class="status-banner error hidden" role="alert"></div>
+                <button type="submit" class="btn-primary auth-submit" id="signup-submit-btn">
+                  <span>Create Account &amp; Save Profile</span>
+                </button>
+              </form>
+
+              <p class="auth-footer-note">📁 Credentials saved to server <code>sessions/users.json</code> &amp; browser <code>localStorage</code>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SETUP PANEL -->
+      <section id="setup-panel" class="panel hidden">
+        <h2>AI Job Description Assessment</h2>
+        <p class="lead">Paste or upload a job description. We'll extract skills, tools, and requirements before generating your assessment.</p>
+
+        <div class="input-tabs" role="tablist" aria-label="Job description input method">
+          <button type="button" class="input-tab active" data-tab="paste" role="tab" aria-selected="true">Paste Text</button>
+          <button type="button" class="input-tab" data-tab="upload" role="tab" aria-selected="false">Upload File</button>
+        </div>
+
+        <form id="setup-form" class="form-grid">
+          <div>
+            <label for="candidate-name">Candidate Name</label>
+            <input id="candidate-name" type="text" placeholder="Alex Morgan" required />
+          </div>
+
+          <div>
+            <label for="candidate-department">Candidate Department / Specialization</label>
+            <select id="candidate-department" required>
+              <option value="Cybersecurity">Cybersecurity (General)</option>
+              <option value="AI / Machine Learning">AI / Machine Learning (Data Science)</option>
+              <option value="Software Engineering">Software Engineering (AppSec)</option>
+              <option value="DevOps / Cloud">DevOps / Cloud Security</option>
+            </select>
+          </div>
+
+          <div id="paste-input-panel" class="input-panel">
+            <label for="job-description">Job Description</label>
+            <textarea id="job-description" placeholder="Paste the full JD here. Include responsibilities, required skills, tools, and certifications..."></textarea>
+          </div>
+
+          <div id="upload-input-panel" class="input-panel hidden">
+            <label for="jd-file">Upload Job Description</label>
+            <div class="upload-zone" id="upload-zone">
+              <input id="jd-file" type="file" accept=".pdf,.docx,.txt,application/pdf,text/plain" hidden />
+              <div class="upload-content">
+                <span class="upload-icon">↑</span>
+                <p><strong>Drop PDF, DOCX, or TXT here</strong></p>
+                <p class="upload-hint">Max 5 MB · or click to browse</p>
+                <p id="upload-filename" class="upload-filename hidden"></p>
+              </div>
+            </div>
+            <label for="job-description-supplement" class="supplement-label">Additional Notes (optional)</label>
+            <textarea id="job-description-supplement" placeholder="Add extra context not in the uploaded file..."></textarea>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn-secondary" id="analyze-btn">Analyze Job Description</button>
+            <button type="submit" class="btn-primary" id="generate-btn" disabled>Generate Assessment</button>
+          </div>
+          <div id="setup-status" class="status-banner hidden"></div>
+        </form>
+
+        <div id="jd-analysis-panel" class="jd-analysis-panel hidden" aria-live="polite">
+          <div class="analysis-header">
+            <div>
+              <h3>Extracted Role Profile</h3>
+              <p class="analysis-subtitle">Review extracted skills before generating questions.</p>
+            </div>
+            <div class="analysis-meta">
+              <span id="analysis-source-badge" class="badge">Paste</span>
+              <span id="analysis-item-count" class="badge">0 items</span>
+            </div>
+          </div>
+
+          <div class="analysis-hero">
+            <div class="analysis-hero-card">
+              <label>Job Title</label>
+              <strong id="analysis-job-title">—</strong>
+            </div>
+            <div class="analysis-hero-card">
+              <label>Experience</label>
+              <strong id="analysis-experience">—</strong>
+            </div>
+          </div>
+
+          <div id="skills-grid" class="skills-grid"></div>
+        </div>
+      </section>
+
+      <!-- TEST PANEL -->
+      <section id="test-panel" class="panel hidden">
+        <div class="test-topbar">
+          <div class="test-meta">
+            <strong id="test-title">Assessment</strong>
+            <span id="test-subtitle">Candidate - Role</span>
+          </div>
+          <div class="timers-control">
+            <div class="timer-wrapper">
+              <span class="timer-label">GLOBAL TIME</span>
+              <div id="timer" class="timer">45:00</div>
+            </div>
+            <div class="timer-wrapper">
+              <span class="timer-label">QUESTION TIME</span>
+              <div id="q-timer" class="timer secondary-timer">00:00</div>
+            </div>
+            <button type="button" class="btn-secondary" id="pause-btn">Pause</button>
+          </div>
+        </div>
+
+        <!-- Real-Time Score Dashboard -->
+        <div id="live-dashboard" class="live-dashboard">
+          <div class="live-metric">
+            <span class="metric-val" id="live-score">0 / 0</span>
+            <span class="metric-lbl">Current Score</span>
+          </div>
+          <div class="live-metric">
+            <span class="metric-val" id="live-pct">0%</span>
+            <span class="metric-lbl">Percentage</span>
+          </div>
+          <div class="live-metric">
+            <span class="metric-val" id="live-accuracy">0%</span>
+            <span class="metric-lbl">Accuracy</span>
+          </div>
+          <div class="live-metric">
+            <span class="metric-val" id="live-correct">0</span>
+            <span class="metric-lbl">Correct</span>
+          </div>
+          <div class="live-metric">
+            <span class="metric-val" id="live-wrong">0</span>
+            <span class="metric-lbl">Wrong</span>
+          </div>
+          <div class="live-metric text-cyan">
+            <span class="metric-val" id="live-remaining">0</span>
+            <span class="metric-lbl">Remaining</span>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span>Progress</span>
+            <span id="progress-text">0 / 0 answered</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="test-container-rel">
+          <div id="question-list" class="question-list"></div>
+          <div id="pause-overlay" class="pause-overlay hidden">
+            <div class="pause-message-card">
+              <span>⏸</span>
+              <h3>Assessment Paused</h3>
+              <p>Timers are stopped. Content is hidden for integrity. Click below to resume.</p>
+              <button type="button" class="btn-primary" id="resume-btn">Resume Assessment</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn-primary" id="submit-btn">Submit Assessment</button>
+        </div>
+        <div id="test-status" class="status-banner hidden"></div>
+      </section>
+
+      <!-- REPORT PANEL -->
+      <section id="report-panel" class="panel hidden">
+        <h2>Assessment Results</h2>
+        <p class="lead">Detailed grading rubric metrics, weak area diagnosis, and comprehensive review.</p>
+
+        <div class="report-summary">
+          <div class="metric-card">
+            <label>Overall Score</label>
+            <strong id="summary-score">--</strong>
+          </div>
+          <div class="metric-card">
+            <label>Percentage</label>
+            <strong id="summary-percentage">--</strong>
+            <span class="grade-badge" id="summary-grade">Grade: -</span>
+          </div>
+          <div class="metric-card">
+            <label>Readiness</label>
+            <div class="readiness-wrap">
+              <strong id="summary-readiness">--</strong>
+              <div class="readiness-meter"><div class="readiness-fill" id="readiness-fill"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="recommendation" id="summary-recommendation-block">
+          <strong>Recommendation:</strong> <span id="summary-recommendation">--</span>
+        </div>
+
+        <!-- Weak & Strong Areas -->
+        <div class="analytics-grid-two">
+          <div class="detail-card green-border">
+            <h3>Strong Domains</h3>
+            <ul id="strong-domains-list" class="bullet-list positive"></ul>
+          </div>
+          <div class="detail-card red-border">
+            <h3>Weak Domains (Requires Focus)</h3>
+            <ul id="weak-domains-list" class="bullet-list negative"></ul>
+          </div>
+        </div>
+
+        <!-- Attempt History -->
+        <div id="history-section" class="history-section">
+          <h3>Attempt History</h3>
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Attempt #</th>
+                <th>Date / Time</th>
+                <th>Score</th>
+                <th>Percentage</th>
+                <th>Security Audit</th>
+              </tr>
+            </thead>
+            <tbody id="history-attempts-rows">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Question Review Accordion -->
+        <div class="review-section">
+          <h3>Detailed Question Review</h3>
+          <div id="question-review-list" class="question-review-list"></div>
+        </div>
+
+        <div class="actions justify-between">
+          <div class="actions-left">
+            <button type="button" class="btn-primary" id="open-report-btn">Open Full Report</button>
+            <button type="button" class="btn-secondary" id="download-report-btn">Download PDF Style</button>
+          </div>
+          <div class="actions-right">
+            <button type="button" class="btn-secondary" id="retake-assessment-btn">Retake Test</button>
+            <button type="button" class="btn-secondary" id="regenerate-assessment-btn">Generate New Set</button>
+            <button type="button" class="btn-secondary" id="new-assessment-btn">New Assessment</button>
+          </div>
+        </div>
+
+        <iframe id="report-frame" class="report-frame hidden" title="Assessment report"></iframe>
+      </section>
+
+      <!-- ADMIN PANEL -->
+      <section id="admin-panel" class="panel hidden">
+        <!-- Admin Auth Container (Visible when not logged in) -->
+        <div id="admin-auth-container" class="admin-auth-container">
+          <div class="auth-card">
+            <span class="auth-icon">🛡️</span>
+            <h3>Admin Portal Access</h3>
+            <p class="auth-subtitle">Authentication required to view system analytics and candidate records.</p>
+            
+            <form id="admin-login-form">
+              <div class="form-group">
+                <label for="admin-username">Username</label>
+                <input id="admin-username" type="text" placeholder="Enter username" autocomplete="username" required />
+              </div>
+              <div class="form-group">
+                <label for="admin-password">Password</label>
+                <div class="password-input-wrap">
+                  <input id="admin-password" type="password" placeholder="Enter password" autocomplete="current-password" required />
+                  <button type="button" class="btn-password-toggle" id="admin-password-toggle" aria-label="Toggle password visibility">👁️</button>
+                </div>
+              </div>
+              <div id="admin-auth-error" class="status-banner error hidden" role="alert"></div>
+              <div class="auth-actions">
+                <button type="button" class="btn-secondary" id="admin-auth-cancel-btn">Cancel</button>
+                <button type="submit" class="btn-primary" id="admin-auth-submit-btn">Verify Credentials</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Admin Dashboard Container (Visible when authenticated) -->
+        <div id="admin-dashboard-container" class="admin-dashboard-container hidden">
+          <div class="admin-header-row">
+            <div>
+              <h2>Admin Control Panel</h2>
+              <p class="lead">View candidates, attempts history, aggregated analytics, and manage assessments.</p>
+            </div>
+            <div class="admin-header-actions">
+              <button type="button" class="btn-secondary" id="admin-logout-btn">Logout</button>
+              <button type="button" class="btn-secondary" id="admin-back-btn">← Exit Admin Mode</button>
+            </div>
+          </div>
+
+          <!-- Aggregated Analytics -->
+          <div class="analytics-grid">
+            <div class="metric-card">
+              <label>Total Assessments</label>
+              <strong id="admin-total-assessments">0</strong>
+            </div>
+            <div class="metric-card">
+              <label>Completed</label>
+              <strong id="admin-completed-assessments">0</strong>
+            </div>
+            <div class="metric-card">
+              <label>Completion Rate</label>
+              <strong id="admin-completion-rate">0%</strong>
+            </div>
+            <div class="metric-card">
+              <label>Average Score</label>
+              <strong id="admin-average-score">0%</strong>
+            </div>
+          </div>
+
+          <div class="admin-details-grid">
+            <div class="detail-card">
+              <h3>Weakest Categories</h3>
+              <ul id="admin-weak-categories" class="bullet-list"></ul>
+            </div>
+            <div class="detail-card">
+              <h3>Most Missed Skills</h3>
+              <ul id="admin-missed-skills" class="bullet-list"></ul>
+            </div>
+          </div>
+
+          <!-- Assessments list -->
+          <div class="admin-table-wrap">
+            <div class="table-header">
+              <h3>All Candidate Assessments</h3>
+              <button type="button" class="btn-secondary" id="export-csv-btn">Export CSV Report</button>
+            </div>
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Candidate</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Attempts</th>
+                  <th>Top Score</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-sessions-list">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Screen lock and proctor overlays -->
+  <div id="fullscreen-lock-overlay" class="fullscreen-lock-overlay hidden">
+    <div class="lock-card">
+      <span class="lock-icon">🔒</span>
+      <h2>Assessment Paused</h2>
+      <p>For exam integrity, you must remain in fullscreen mode. Switching tabs, exiting fullscreen, or losing window focus is monitored and recorded.</p>
+      <button type="button" class="btn-primary" id="resume-fullscreen-btn">Resume Test in Fullscreen</button>
+    </div>
+  </div>
+
+  <div id="proctor-toast" class="proctor-toast hidden"></div>
+
+  <!-- USER PROFILE & HISTORY MODAL -->
+  <div id="user-history-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-icon">👤</span>
+          <h3>Candidate Profile &amp; History</h3>
+        </div>
+        <button type="button" class="btn-close" id="close-history-modal-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="user-profile-summary">
+          <div class="user-avatar-large" id="modal-user-avatar">AM</div>
+          <div class="profile-details">
+            <h4 id="modal-user-name">Alex Morgan</h4>
+            <p id="modal-user-email" class="muted-text">alex.morgan@cyber.io</p>
+            <div class="profile-tags">
+              <span id="modal-user-dept" class="badge">Cybersecurity</span>
+              <span id="modal-user-storage" class="badge badge-accent">Localhost File Synchronized</span>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="history-title">Assessment History</h4>
+        <div class="modal-history-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Job Title / Role</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Score</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="user-modal-history-rows">
+              <tr><td colspan="5" class="text-center">Loading assessment history...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+{
+  "session_id": "4553b841-290f-4245-bd98-79a577654b4f",
+  "candidate_name": "Test User",
+  "job_title": "Software Engineer",
+  "job_description": "Develop and maintain cloud-native microservices using Python, Docker, and REST APIs. Collaborate with security and QA teams to ensure scalable and reliable deployment pipelines.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Testing Fundamentals",
+      "prompt": "What is the main purpose of Smoke Testing?",
+      "options": [
+        "A) To validate every edge case in detail",
+        "B) To verify that critical functionality is stable enough for deeper testing",
+        "C) To measure database performance under load",
+        "D) To replace User Acceptance Testing"
+      ],
+      "correct_answer": "B) To verify that critical functionality is stable enough for deeper testing",
+      "rubric": "Smoke testing checks whether the build is stable enough for detailed testing.",
+      "points": 5
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "category": "Testing Fundamentals",
+      "prompt": "Which testing type is most focused on ensuring that recent code changes have not broken existing functionality?",
+      "options": [
+        "A) Sanity Testing",
+        "B) Regression Testing",
+        "C) Exploratory Testing",
+        "D) Installation Testing"
+      ],
+      "correct_answer": "B) Regression Testing",
+      "rubric": "Regression testing confirms that existing features still work after changes.",
+      "points": 5
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Defect Management",
+      "prompt": "Which detail is most important when logging a defect in Jira?",
+      "options": [
+        "A) Personal opinion about the developer",
+        "B) Reproducible steps, expected result, and actual result",
+        "C) Only a screenshot with no description",
+        "D) The production release date only"
+      ],
+      "correct_answer": "B) Reproducible steps, expected result, and actual result",
+      "rubric": "Good defect reports make issues reproducible and clear for developers.",
+      "points": 5
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "category": "API Testing",
+      "prompt": "When testing an API in Postman, which status code usually indicates a successful resource creation?",
+      "options": [
+        "A) 200",
+        "B) 201",
+        "C) 400",
+        "D) 500"
+      ],
+      "correct_answer": "B) 201",
+      "rubric": "HTTP 201 typically indicates successful creation of a resource.",
+      "points": 5
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "SQL Validation",
+      "prompt": "Why would a test analyst execute SQL queries during testing?",
+      "options": [
+        "A) To redesign the database schema",
+        "B) To validate backend data and confirm application behavior",
+        "C) To deploy application code to production",
+        "D) To replace UI testing completely"
+      ],
+      "correct_answer": "B) To validate backend data and confirm application behavior",
+      "rubric": "SQL queries help confirm whether the application stored or retrieved the right data.",
+      "points": 5
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "Automation Basics",
+      "prompt": "What is Selenium WebDriver primarily used for?",
+      "options": [
+        "A) API load balancing",
+        "B) Browser-based automation testing",
+        "C) Database backup scheduling",
+        "D) Source code versioning"
+      ],
+      "correct_answer": "B) Browser-based automation testing",
+      "rubric": "Selenium WebDriver automates browser actions for UI testing.",
+      "points": 5
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Process & Methodology",
+      "prompt": "In Agile Scrum, when are testers ideally involved in a user story?",
+      "options": [
+        "A) Only after production release",
+        "B) Only during UAT",
+        "C) From requirement discussion through execution and review",
+        "D) Only after developers finish coding all modules"
+      ],
+      "correct_answer": "C) From requirement discussion through execution and review",
+      "rubric": "Agile testing works best when QA is involved early and continuously.",
+      "points": 5
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Artifacts",
+      "prompt": "What is the main purpose of a Requirement Traceability Matrix (RTM)?",
+      "options": [
+        "A) To schedule deployments",
+        "B) To map requirements to test coverage and execution status",
+        "C) To replace test cases",
+        "D) To estimate developer story points"
+      ],
+      "correct_answer": "B) To map requirements to test coverage and execution status",
+      "rubric": "RTM ensures each requirement is covered by test cases and tracked through execution.",
+      "points": 5
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Test Design",
+      "prompt": "Which test design technique is most useful when input values have valid and invalid ranges?",
+      "options": [
+        "A) Boundary Value Analysis",
+        "B) Pair Programming",
+        "C) Story Mapping",
+        "D) Continuous Deployment"
+      ],
+      "correct_answer": "A) Boundary Value Analysis",
+      "rubric": "Boundary Value Analysis focuses on edges where defects commonly appear.",
+      "points": 5
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "category": "UAT & Collaboration",
+      "prompt": "What best describes User Acceptance Testing (UAT)?",
+      "options": [
+        "A) Testing done by developers only",
+        "B) Validation that the system meets business needs from an end-user perspective",
+        "C) Security scanning of infrastructure",
+        "D) Automated browser testing using Selenium"
+      ],
+      "correct_answer": "B) Validation that the system meets business needs from an end-user perspective",
+      "rubric": "UAT focuses on whether the solution meets real business expectations and workflows.",
+      "points": 5
+    },
+    {
+      "id": "q11",
+      "type": "short_answer",
+      "category": "Test Case Design",
+      "prompt": "How would you design test cases for a login page that supports valid login, invalid login, locked users, and password reset?",
+      "rubric": "Look for positive and negative coverage, boundary cases, validation messages, lockout behavior, password reset path, and data/setup assumptions.",
+      "sample_answer": "Cover valid and invalid credentials, blank fields, lockout thresholds, password reset flow, and expected system messages with clear preconditions and data.",
+      "points": 10
+    },
+    {
+      "id": "q12",
+      "type": "short_answer",
+      "category": "Defect Reporting",
+      "prompt": "What information should be included in a high-quality bug report for a developer?",
+      "rubric": "Expect title, environment, preconditions, steps to reproduce, expected result, actual result, severity or priority, attachments, and reproducibility details.",
+      "sample_answer": "A good bug report includes environment, preconditions, reproducible steps, expected vs actual result, severity, evidence, and any relevant logs or data.",
+      "points": 10
+    },
+    {
+      "id": "q13",
+      "type": "short_answer",
+      "category": "API & Data Validation",
+      "prompt": "How would you validate an API-backed feature using both Postman and SQL?",
+      "rubric": "Look for request validation, response assertions, status codes, schema or field checks, database verification, and handling of negative cases.",
+      "sample_answer": "Use Postman to validate requests, responses, and status codes, then run SQL queries to confirm the backend data was created or updated correctly.",
+      "points": 10
+    },
+    {
+      "id": "q14",
+      "type": "scenario",
+      "category": "End-to-End Testing Strategy",
+      "prompt": "A new release for an e-commerce web app is ready. It includes checkout changes, new discount logic, and an updated order history page. As the Software Test Analyst, explain how you would plan and execute testing before sign-off.",
+      "rubric": "Expect requirement analysis, test planning, risk-based prioritization, smoke/sanity coverage, functional and regression coverage, API/data validation, defect logging, stakeholder communication, and release recommendation.",
+      "sample_answer": "Review requirements and impacted modules, prepare risk-based test cases, run smoke and functional tests on checkout and discounts, validate APIs and database data, execute regression on related flows, log defects in Jira, retest fixes, and summarize release readiness.",
+      "points": 20
+    }
+  ],
+  "duration_minutes": 45,
+  "created_at": "2026-07-25T04:52:47.561503+00:00",
+  "started_at": "2026-07-25T04:52:47.583873+00:00",
+  "submitted_at": "2026-07-25T04:52:47.589676+00:00",
+  "status": "graded",
+  "answers": {
+    "q1": "A) To validate every edge case in detail",
+    "q2": "A) Sanity Testing",
+    "q3": "A) Personal opinion about the developer",
+    "q4": "A) 200",
+    "q5": "A) To redesign the database schema",
+    "q6": "A) API load balancing",
+    "q7": "A) Only after production release",
+    "q8": "A) To schedule deployments",
+    "q9": "A) Boundary Value Analysis",
+    "q10": "A) Testing done by developers only",
+    "q11": "Test response",
+    "q12": "Test response",
+    "q13": "Test response",
+    "q14": "Test response"
+  },
+  "grading_result": {
+    "total_score": 24.1,
+    "max_score": 100.0,
+    "overall_percentage": 24.1,
+    "recommendation": "Do Not Proceed - significant gaps relative to role requirements.",
+    "category_breakdown": [
+      {
+        "category": "API & Data Validation",
+        "score": 4.0,
+        "max_score": 10.0,
+        "percentage": 40.0
+      },
+      {
+        "category": "API Testing",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "Artifacts",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "Automation Basics",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "Defect Management",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "Defect Reporting",
+        "score": 3.5,
+        "max_score": 10.0,
+        "percentage": 35.0
+      },
+      {
+        "category": "End-to-End Testing Strategy",
+        "score": 8.1,
+        "max_score": 20.0,
+        "percentage": 40.5
+      },
+      {
+        "category": "Process & Methodology",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "SQL Validation",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "Test Case Design",
+        "score": 3.5,
+        "max_score": 10.0,
+        "percentage": 35.0
+      },
+      {
+        "category": "Test Design",
+        "score": 5.0,
+        "max_score": 5.0,
+        "percentage": 100.0
+      },
+      {
+        "category": "Testing Fundamentals",
+        "score": 0.0,
+        "max_score": 10.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "UAT & Collaboration",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      }
+    ],
+    "question_results": [
+      {
+        "id": "q1",
+        "type": "mcq",
+        "category": "Testing Fundamentals",
+        "prompt": "What is the main purpose of Smoke Testing?",
+        "answer": "A) To validate every edge case in detail",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) To verify that critical functionality is stable enough for deeper testing",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) To verify that critical functionality is stable enough for deeper testing"
+        }
+      },
+      {
+        "id": "q2",
+        "type": "mcq",
+        "category": "Testing Fundamentals",
+        "prompt": "Which testing type is most focused on ensuring that recent code changes have not broken existing functionality?",
+        "answer": "A) Sanity Testing",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Regression Testing",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Regression Testing"
+        }
+      },
+      {
+        "id": "q3",
+        "type": "mcq",
+        "category": "Defect Management",
+        "prompt": "Which detail is most important when logging a defect in Jira?",
+        "answer": "A) Personal opinion about the developer",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Reproducible steps, expected result, and actual result",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Reproducible steps, expected result, and actual result"
+        }
+      },
+      {
+        "id": "q4",
+        "type": "mcq",
+        "category": "API Testing",
+        "prompt": "When testing an API in Postman, which status code usually indicates a successful resource creation?",
+        "answer": "A) 200",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) 201",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) 201"
+        }
+      },
+      {
+        "id": "q5",
+        "type": "mcq",
+        "category": "SQL Validation",
+        "prompt": "Why would a test analyst execute SQL queries during testing?",
+        "answer": "A) To redesign the database schema",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) To validate backend data and confirm application behavior",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) To validate backend data and confirm application behavior"
+        }
+      },
+      {
+        "id": "q6",
+        "type": "mcq",
+        "category": "Automation Basics",
+        "prompt": "What is Selenium WebDriver primarily used for?",
+        "answer": "A) API load balancing",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Browser-based automation testing",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Browser-based automation testing"
+        }
+      },
+      {
+        "id": "q7",
+        "type": "mcq",
+        "category": "Process & Methodology",
+        "prompt": "In Agile Scrum, when are testers ideally involved in a user story?",
+        "answer": "A) Only after production release",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: C) From requirement discussion through execution and review",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "C) From requirement discussion through execution and review"
+        }
+      },
+      {
+        "id": "q8",
+        "type": "mcq",
+        "category": "Artifacts",
+        "prompt": "What is the main purpose of a Requirement Traceability Matrix (RTM)?",
+        "answer": "A) To schedule deployments",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) To map requirements to test coverage and execution status",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) To map requirements to test coverage and execution status"
+        }
+      },
+      {
+        "id": "q9",
+        "type": "mcq",
+        "category": "Test Design",
+        "prompt": "Which test design technique is most useful when input values have valid and invalid ranges?",
+        "answer": "A) Boundary Value Analysis",
+        "result": {
+          "score": 5,
+          "max_score": 5,
+          "percentage": 100.0,
+          "feedback": "Correct.",
+          "strengths": [
+            "Selected the correct option"
+          ],
+          "gaps": [],
+          "correct_answer": "A) Boundary Value Analysis"
+        }
+      },
+      {
+        "id": "q10",
+        "type": "mcq",
+        "category": "UAT & Collaboration",
+        "prompt": "What best describes User Acceptance Testing (UAT)?",
+        "answer": "A) Testing done by developers only",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Validation that the system meets business needs from an end-user perspective",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Validation that the system meets business needs from an end-user perspective"
+        }
+      },
+      {
+        "id": "q11",
+        "type": "short_answer",
+        "category": "Test Case Design",
+        "prompt": "How would you design test cases for a login page that supports valid login, invalid login, locked users, and password reset?",
+        "answer": "Test response",
+        "result": {
+          "score": 3.5,
+          "max_score": 10,
+          "percentage": 35.0,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      },
+      {
+        "id": "q12",
+        "type": "short_answer",
+        "category": "Defect Reporting",
+        "prompt": "What information should be included in a high-quality bug report for a developer?",
+        "answer": "Test response",
+        "result": {
+          "score": 3.5,
+          "max_score": 10,
+          "percentage": 35.0,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      },
+      {
+        "id": "q13",
+        "type": "short_answer",
+        "category": "API & Data Validation",
+        "prompt": "How would you validate an API-backed feature using both Postman and SQL?",
+        "answer": "Test response",
+        "result": {
+          "score": 4.0,
+          "max_score": 10,
+          "percentage": 40.0,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      },
+      {
+        "id": "q14",
+        "type": "scenario",
+        "category": "End-to-End Testing Strategy",
+        "prompt": "A new release for an e-commerce web app is ready. It includes checkout changes, new discount logic, and an updated order history page. As the Software Test Analyst, explain how you would plan and execute testing before sign-off.",
+        "answer": "Test response",
+        "result": {
+          "score": 8.1,
+          "max_score": 20,
+          "percentage": 40.5,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      }
+    ]
+  },
+  "submitted_late": false,
+  "late_seconds": 0,
+  "security_violations": 0
+}

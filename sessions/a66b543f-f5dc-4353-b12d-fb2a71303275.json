@@ -1,0 +1,390 @@
+{
+  "session_id": "a66b543f-f5dc-4353-b12d-fb2a71303275",
+  "candidate_name": "Test Candidate",
+  "job_title": "Security Analyst",
+  "job_description": "We are seeking a Security Analyst with 2+ years of experience. Responsibilities include monitoring security logs, triaging alerts, and implementing network security controls. Knowledge of firewalls, SIEM, and incident response is required.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Network Security",
+      "prompt": "Which protocol is commonly used to securely remote into Linux servers?",
+      "options": [
+        "A) Telnet",
+        "B) SSH",
+        "C) FTP",
+        "D) HTTP"
+      ],
+      "correct_answer": "B) SSH",
+      "rubric": "SSH encrypts the session; Telnet and FTP are cleartext.",
+      "points": 10
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "category": "Malware Analysis",
+      "prompt": "What does IOC stand for in threat detection?",
+      "options": [
+        "A) Indicator of Compromise",
+        "B) Internal Operations Control",
+        "C) Incident Operations Center",
+        "D) Internet Outbound Connection"
+      ],
+      "correct_answer": "A) Indicator of Compromise",
+      "rubric": "IOC refers to artifacts suggesting compromise.",
+      "points": 10
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Identity & Access",
+      "prompt": "Which control best reduces credential stuffing risk?",
+      "options": [
+        "A) Password complexity only",
+        "B) MFA with rate limiting",
+        "C) Annual password rotation",
+        "D) Shared admin accounts"
+      ],
+      "correct_answer": "B) MFA with rate limiting",
+      "rubric": "MFA plus throttling mitigates automated credential abuse.",
+      "points": 10
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "category": "Logging & Monitoring",
+      "prompt": "In SIEM triage, which field is most useful to pivot on lateral movement?",
+      "options": [
+        "A) DNS query length",
+        "B) Source/destination IP and logon events",
+        "C) Browser user-agent",
+        "D) DHCP lease time"
+      ],
+      "correct_answer": "B) Source/destination IP and logon events",
+      "rubric": "Authentication and network flow data reveal lateral movement.",
+      "points": 10
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Vulnerability Management",
+      "prompt": "CVSS primarily measures what?",
+      "options": [
+        "A) Patch deployment speed",
+        "B) Severity characteristics of a vulnerability",
+        "C) Compliance audit readiness",
+        "D) Mean time to detect"
+      ],
+      "correct_answer": "B) Severity characteristics of a vulnerability",
+      "rubric": "CVSS scores vulnerability severity, not operational metrics.",
+      "points": 10
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "category": "Incident Response",
+      "prompt": "Describe the first three actions you would take after confirming ransomware on a workstation in an active directory environment.",
+      "rubric": "Expect isolation/containment, evidence preservation, scope assessment, stakeholder notification, and safe recovery planning. Award partial credit for reasonable sequencing.",
+      "sample_answer": "Isolate host, preserve logs, identify patient zero and lateral paths, notify IR lead, begin containment.",
+      "points": 15
+    },
+    {
+      "id": "q7",
+      "type": "short_answer",
+      "category": "Cloud Security",
+      "prompt": "Explain the difference between security groups and NACLs in AWS networking.",
+      "rubric": "Should mention stateful vs stateless, instance/ENI level vs subnet level, allow/deny behavior, and evaluation order.",
+      "sample_answer": "Security groups are stateful and attached to ENIs; NACLs are stateless subnet-level filters.",
+      "points": 15
+    },
+    {
+      "id": "q8",
+      "type": "short_answer",
+      "category": "Threat Intelligence",
+      "prompt": "How would you validate whether a newly published CVE is relevant to your organization?",
+      "rubric": "Look for asset exposure, version matching, exploit availability, compensating controls, and prioritization against business impact.",
+      "sample_answer": "Inventory affected software versions, check exposure, review exploit intel, prioritize patching.",
+      "points": 10
+    },
+    {
+      "id": "q9",
+      "type": "scenario",
+      "category": "SOC Operations",
+      "prompt": "At 02:15, your SIEM alerts on multiple failed VPN logins followed by a successful login from an unusual country for a finance user. Outline your investigation and response steps over the next hour.",
+      "rubric": "Grade on detection validation, account/session review, MFA/geo policy checks, containment, escalation, and documentation.",
+      "sample_answer": "Validate alert, disable/reset account, review sessions, check MFA logs, hunt for persistence, notify stakeholders.",
+      "points": 10
+    },
+    {
+      "id": "q10",
+      "type": "scenario",
+      "category": "Application Security",
+      "prompt": "A developer reports that API keys were committed to a public GitHub repository 20 minutes ago. Describe your immediate and follow-up actions.",
+      "rubric": "Expect secret revocation/rotation, repo cleanup, scope analysis, monitoring for abuse, and preventive controls.",
+      "sample_answer": "Revoke keys, rotate secrets, remove from history if needed, audit usage, implement secret scanning.",
+      "points": 10
+    }
+  ],
+  "duration_minutes": 45,
+  "created_at": "2026-07-24T10:29:16.388711+00:00",
+  "started_at": "2026-07-24T10:29:16.418901+00:00",
+  "submitted_at": "2026-07-24T10:29:16.449881+00:00",
+  "status": "graded",
+  "answers": {
+    "q1": "B) SSH",
+    "q2": "B) Internal Operations Control",
+    "q3": "B) MFA with rate limiting",
+    "q4": "B) Source/destination IP and logon events",
+    "q5": "B) Severity characteristics of a vulnerability",
+    "q6": "This is a test answer detailing incident response procedures and network security isolation.",
+    "q7": "This is a test answer detailing incident response procedures and network security isolation.",
+    "q8": "This is a test answer detailing incident response procedures and network security isolation.",
+    "q9": "This is a test answer detailing incident response procedures and network security isolation.",
+    "q10": "This is a test answer detailing incident response procedures and network security isolation."
+  },
+  "grading_result": {
+    "total_score": 62.7,
+    "max_score": 110.0,
+    "overall_percentage": 57.0,
+    "recommendation": "Borderline \u2014 consider follow-up technical interview on weak domains.",
+    "category_breakdown": [
+      {
+        "category": "Application Security",
+        "score": 3.5,
+        "max_score": 10.0,
+        "percentage": 35.0
+      },
+      {
+        "category": "Cloud Security",
+        "score": 6.1,
+        "max_score": 15.0,
+        "percentage": 40.7
+      },
+      {
+        "category": "Identity & Access",
+        "score": 10.0,
+        "max_score": 10.0,
+        "percentage": 100.0
+      },
+      {
+        "category": "Incident Response",
+        "score": 6.1,
+        "max_score": 15.0,
+        "percentage": 40.7
+      },
+      {
+        "category": "Logging & Monitoring",
+        "score": 10.0,
+        "max_score": 10.0,
+        "percentage": 100.0
+      },
+      {
+        "category": "Malware Analysis",
+        "score": 0.0,
+        "max_score": 10.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "Network Security",
+        "score": 10.0,
+        "max_score": 10.0,
+        "percentage": 100.0
+      },
+      {
+        "category": "SOC Operations",
+        "score": 3.5,
+        "max_score": 10.0,
+        "percentage": 35.0
+      },
+      {
+        "category": "Threat Intelligence",
+        "score": 3.5,
+        "max_score": 10.0,
+        "percentage": 35.0
+      },
+      {
+        "category": "Vulnerability Management",
+        "score": 10.0,
+        "max_score": 10.0,
+        "percentage": 100.0
+      }
+    ],
+    "question_results": [
+      {
+        "id": "q1",
+        "type": "mcq",
+        "category": "Network Security",
+        "prompt": "Which protocol is commonly used to securely remote into Linux servers?",
+        "answer": "B) SSH",
+        "result": {
+          "score": 10,
+          "max_score": 10,
+          "percentage": 100.0,
+          "feedback": "Correct.",
+          "strengths": [
+            "Selected the correct option"
+          ],
+          "gaps": [],
+          "correct_answer": "B) SSH"
+        }
+      },
+      {
+        "id": "q2",
+        "type": "mcq",
+        "category": "Malware Analysis",
+        "prompt": "What does IOC stand for in threat detection?",
+        "answer": "B) Internal Operations Control",
+        "result": {
+          "score": 0,
+          "max_score": 10,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: A) Indicator of Compromise",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "A) Indicator of Compromise"
+        }
+      },
+      {
+        "id": "q3",
+        "type": "mcq",
+        "category": "Identity & Access",
+        "prompt": "Which control best reduces credential stuffing risk?",
+        "answer": "B) MFA with rate limiting",
+        "result": {
+          "score": 10,
+          "max_score": 10,
+          "percentage": 100.0,
+          "feedback": "Correct.",
+          "strengths": [
+            "Selected the correct option"
+          ],
+          "gaps": [],
+          "correct_answer": "B) MFA with rate limiting"
+        }
+      },
+      {
+        "id": "q4",
+        "type": "mcq",
+        "category": "Logging & Monitoring",
+        "prompt": "In SIEM triage, which field is most useful to pivot on lateral movement?",
+        "answer": "B) Source/destination IP and logon events",
+        "result": {
+          "score": 10,
+          "max_score": 10,
+          "percentage": 100.0,
+          "feedback": "Correct.",
+          "strengths": [
+            "Selected the correct option"
+          ],
+          "gaps": [],
+          "correct_answer": "B) Source/destination IP and logon events"
+        }
+      },
+      {
+        "id": "q5",
+        "type": "mcq",
+        "category": "Vulnerability Management",
+        "prompt": "CVSS primarily measures what?",
+        "answer": "B) Severity characteristics of a vulnerability",
+        "result": {
+          "score": 10,
+          "max_score": 10,
+          "percentage": 100.0,
+          "feedback": "Correct.",
+          "strengths": [
+            "Selected the correct option"
+          ],
+          "gaps": [],
+          "correct_answer": "B) Severity characteristics of a vulnerability"
+        }
+      },
+      {
+        "id": "q6",
+        "type": "short_answer",
+        "category": "Incident Response",
+        "prompt": "Describe the first three actions you would take after confirming ransomware on a workstation in an active directory environment.",
+        "answer": "This is a test answer detailing incident response procedures and network security isolation.",
+        "result": {
+          "score": 6.1,
+          "max_score": 15,
+          "percentage": 40.7,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      },
+      {
+        "id": "q7",
+        "type": "short_answer",
+        "category": "Cloud Security",
+        "prompt": "Explain the difference between security groups and NACLs in AWS networking.",
+        "answer": "This is a test answer detailing incident response procedures and network security isolation.",
+        "result": {
+          "score": 6.1,
+          "max_score": 15,
+          "percentage": 40.7,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      },
+      {
+        "id": "q8",
+        "type": "short_answer",
+        "category": "Threat Intelligence",
+        "prompt": "How would you validate whether a newly published CVE is relevant to your organization?",
+        "answer": "This is a test answer detailing incident response procedures and network security isolation.",
+        "result": {
+          "score": 3.5,
+          "max_score": 10,
+          "percentage": 35.0,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      },
+      {
+        "id": "q9",
+        "type": "scenario",
+        "category": "SOC Operations",
+        "prompt": "At 02:15, your SIEM alerts on multiple failed VPN logins followed by a successful login from an unusual country for a finance user. Outline your investigation and response steps over the next hour.",
+        "answer": "This is a test answer detailing incident response procedures and network security isolation.",
+        "result": {
+          "score": 3.5,
+          "max_score": 10,
+          "percentage": 35.0,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      },
+      {
+        "id": "q10",
+        "type": "scenario",
+        "category": "Application Security",
+        "prompt": "A developer reports that API keys were committed to a public GitHub repository 20 minutes ago. Describe your immediate and follow-up actions.",
+        "answer": "This is a test answer detailing incident response procedures and network security isolation.",
+        "result": {
+          "score": 3.5,
+          "max_score": 10,
+          "percentage": 35.0,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      }
+    ]
+  }
+}

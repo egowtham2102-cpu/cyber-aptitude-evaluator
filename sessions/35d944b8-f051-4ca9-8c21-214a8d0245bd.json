@@ -1,0 +1,548 @@
+{
+  "session_id": "35d944b8-f051-4ca9-8c21-214a8d0245bd",
+  "candidate_name": "Alex Morgan",
+  "job_title": "SOC Analyst L2",
+  "job_description": "Monitor SIEM alerts, triage incidents, perform threat hunting, handle phishing analysis, investigate suspicious authentications, manage incident response documentation, and collaborate with blue team tooling.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Network Security",
+      "prompt": "Which protocol is commonly used to securely remote into Linux servers?",
+      "options": [
+        "A) Telnet",
+        "B) SSH",
+        "C) FTP",
+        "D) HTTP"
+      ],
+      "correct_answer": "B) SSH",
+      "rubric": "SSH encrypts the session; Telnet and FTP are cleartext.",
+      "points": 5
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "category": "Malware Analysis",
+      "prompt": "What does IOC stand for in threat detection?",
+      "options": [
+        "A) Indicator of Compromise",
+        "B) Internal Operations Control",
+        "C) Incident Operations Center",
+        "D) Internet Outbound Connection"
+      ],
+      "correct_answer": "A) Indicator of Compromise",
+      "rubric": "IOC refers to artifacts suggesting compromise.",
+      "points": 5
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Identity & Access",
+      "prompt": "Which control best reduces credential stuffing risk?",
+      "options": [
+        "A) Password complexity only",
+        "B) MFA with rate limiting",
+        "C) Annual password rotation",
+        "D) Shared admin accounts"
+      ],
+      "correct_answer": "B) MFA with rate limiting",
+      "rubric": "MFA plus throttling mitigates automated credential abuse.",
+      "points": 5
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "category": "Logging & Monitoring",
+      "prompt": "In SIEM triage, which field is most useful to pivot on lateral movement?",
+      "options": [
+        "A) DNS query length",
+        "B) Source/destination IP and logon events",
+        "C) Browser user-agent",
+        "D) DHCP lease time"
+      ],
+      "correct_answer": "B) Source/destination IP and logon events",
+      "rubric": "Authentication and network flow data reveal lateral movement.",
+      "points": 5
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Vulnerability Management",
+      "prompt": "CVSS primarily measures what?",
+      "options": [
+        "A) Patch deployment speed",
+        "B) Severity characteristics of a vulnerability",
+        "C) Compliance audit readiness",
+        "D) Mean time to detect"
+      ],
+      "correct_answer": "B) Severity characteristics of a vulnerability",
+      "rubric": "CVSS scores vulnerability severity, not operational metrics.",
+      "points": 5
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "Cloud Security",
+      "prompt": "Which AWS service is commonly used to centrally detect misconfigurations across accounts?",
+      "options": [
+        "A) Amazon Macie",
+        "B) AWS Config",
+        "C) Amazon Route 53",
+        "D) AWS Shield Advanced"
+      ],
+      "correct_answer": "B) AWS Config",
+      "rubric": "AWS Config tracks configuration state and compliance across resources.",
+      "points": 5
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Application Security",
+      "prompt": "Which issue is most directly prevented by parameterized SQL queries?",
+      "options": [
+        "A) Cross-site request forgery",
+        "B) SQL injection",
+        "C) Clickjacking",
+        "D) Broken access control"
+      ],
+      "correct_answer": "B) SQL injection",
+      "rubric": "Parameterized queries separate data from executable SQL.",
+      "points": 5
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Endpoint Security",
+      "prompt": "Which artifact most strongly suggests PowerShell-based persistence on a Windows host?",
+      "options": [
+        "A) A new browser bookmark",
+        "B) A scheduled task that launches an encoded command",
+        "C) A large recycle bin",
+        "D) A renamed local printer"
+      ],
+      "correct_answer": "B) A scheduled task that launches an encoded command",
+      "rubric": "Scheduled tasks with encoded PowerShell commands are a common persistence technique.",
+      "points": 5
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Threat Intelligence",
+      "prompt": "What is the main purpose of mapping alerts to the MITRE ATT&CK framework?",
+      "options": [
+        "A) To encrypt endpoint telemetry",
+        "B) To categorize adversary tactics and techniques",
+        "C) To prioritize hardware refresh cycles",
+        "D) To measure network throughput"
+      ],
+      "correct_answer": "B) To categorize adversary tactics and techniques",
+      "rubric": "ATT&CK helps analysts normalize detections around observed attacker behavior.",
+      "points": 5
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "category": "Governance, Risk, and Compliance",
+      "prompt": "Which control best demonstrates least privilege for privileged administrator access?",
+      "options": [
+        "A) Shared admin credentials",
+        "B) Permanent domain admin access for all IT staff",
+        "C) Just-in-time elevation with approval and logging",
+        "D) Password rotation once per year"
+      ],
+      "correct_answer": "C) Just-in-time elevation with approval and logging",
+      "rubric": "Least privilege is best enforced by time-bound, auditable access elevation.",
+      "points": 5
+    },
+    {
+      "id": "q11",
+      "type": "short_answer",
+      "category": "Incident Response",
+      "prompt": "Describe the first three actions you would take after confirming ransomware on a workstation in an active directory environment.",
+      "rubric": "Expect isolation or containment, evidence preservation, scope assessment, stakeholder notification, and safe recovery planning. Award partial credit for reasonable sequencing.",
+      "sample_answer": "Isolate the host, preserve logs, identify patient zero and lateral movement, notify the IR lead, and begin containment.",
+      "points": 10
+    },
+    {
+      "id": "q12",
+      "type": "short_answer",
+      "category": "Cloud Security",
+      "prompt": "Explain the difference between security groups and NACLs in AWS networking.",
+      "rubric": "Should mention stateful vs stateless behavior, instance or ENI level vs subnet level, allow or deny behavior, and how traffic is evaluated.",
+      "sample_answer": "Security groups are stateful and attached to ENIs, while NACLs are stateless subnet-level filters with ordered allow and deny rules.",
+      "points": 10
+    },
+    {
+      "id": "q13",
+      "type": "short_answer",
+      "category": "Threat Intelligence",
+      "prompt": "How would you validate whether a newly published CVE is relevant to your organization?",
+      "rubric": "Look for asset exposure, version matching, exploit availability, compensating controls, business criticality, and remediation priority.",
+      "sample_answer": "Inventory affected versions, confirm exposure, review exploit intelligence, assess business impact, and prioritize remediation.",
+      "points": 10
+    },
+    {
+      "id": "q14",
+      "type": "scenario",
+      "category": "SOC Operations",
+      "prompt": "At 02:15, your SIEM alerts on multiple failed VPN logins followed by a successful login from an unusual country for a finance user. Outline your investigation and response steps over the next hour.",
+      "rubric": "Grade on alert validation, account and session review, MFA and geo-policy checks, containment, escalation, communication, and documentation.",
+      "sample_answer": "Validate the alert, review account activity, disable or reset the account if needed, inspect related sessions and endpoints, check MFA logs, and notify stakeholders while documenting actions.",
+      "points": 20
+    }
+  ],
+  "duration_minutes": 45,
+  "created_at": "2026-07-24T19:05:05.358147+00:00",
+  "started_at": "2026-07-24T19:05:05.386348+00:00",
+  "submitted_at": "2026-07-24T19:05:05.415663+00:00",
+  "status": "graded",
+  "answers": {
+    "q1": "A) Telnet",
+    "q10": "A) Shared admin credentials",
+    "q11": "Contain the host, preserve logs, identify scope, notify stakeholders, and recover safely.",
+    "q12": "Contain the host, preserve logs, identify scope, notify stakeholders, and recover safely.",
+    "q13": "Contain the host, preserve logs, identify scope, notify stakeholders, and recover safely.",
+    "q14": "Contain the host, preserve logs, identify scope, notify stakeholders, and recover safely.",
+    "q2": "A) Indicator of Compromise",
+    "q3": "A) Password complexity only",
+    "q4": "A) DNS query length",
+    "q5": "A) Patch deployment speed",
+    "q6": "A) Amazon Macie",
+    "q7": "A) Cross-site request forgery",
+    "q8": "A) A new browser bookmark",
+    "q9": "A) To encrypt endpoint telemetry"
+  },
+  "grading_result": {
+    "total_score": 24.1,
+    "max_score": 100.0,
+    "overall_percentage": 24.1,
+    "recommendation": "Do Not Proceed - significant gaps relative to role requirements.",
+    "category_breakdown": [
+      {
+        "category": "Application Security",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "Cloud Security",
+        "score": 3.5,
+        "max_score": 15.0,
+        "percentage": 23.3
+      },
+      {
+        "category": "Endpoint Security",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "Governance, Risk, and Compliance",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "Identity & Access",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "Incident Response",
+        "score": 5.1,
+        "max_score": 10.0,
+        "percentage": 51.0
+      },
+      {
+        "category": "Logging & Monitoring",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "Malware Analysis",
+        "score": 5.0,
+        "max_score": 5.0,
+        "percentage": 100.0
+      },
+      {
+        "category": "Network Security",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      },
+      {
+        "category": "SOC Operations",
+        "score": 7.0,
+        "max_score": 20.0,
+        "percentage": 35.0
+      },
+      {
+        "category": "Threat Intelligence",
+        "score": 3.5,
+        "max_score": 15.0,
+        "percentage": 23.3
+      },
+      {
+        "category": "Vulnerability Management",
+        "score": 0.0,
+        "max_score": 5.0,
+        "percentage": 0.0
+      }
+    ],
+    "question_results": [
+      {
+        "id": "q1",
+        "type": "mcq",
+        "category": "Network Security",
+        "prompt": "Which protocol is commonly used to securely remote into Linux servers?",
+        "answer": "A) Telnet",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) SSH",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) SSH"
+        }
+      },
+      {
+        "id": "q2",
+        "type": "mcq",
+        "category": "Malware Analysis",
+        "prompt": "What does IOC stand for in threat detection?",
+        "answer": "A) Indicator of Compromise",
+        "result": {
+          "score": 5,
+          "max_score": 5,
+          "percentage": 100.0,
+          "feedback": "Correct.",
+          "strengths": [
+            "Selected the correct option"
+          ],
+          "gaps": [],
+          "correct_answer": "A) Indicator of Compromise"
+        }
+      },
+      {
+        "id": "q3",
+        "type": "mcq",
+        "category": "Identity & Access",
+        "prompt": "Which control best reduces credential stuffing risk?",
+        "answer": "A) Password complexity only",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) MFA with rate limiting",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) MFA with rate limiting"
+        }
+      },
+      {
+        "id": "q4",
+        "type": "mcq",
+        "category": "Logging & Monitoring",
+        "prompt": "In SIEM triage, which field is most useful to pivot on lateral movement?",
+        "answer": "A) DNS query length",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Source/destination IP and logon events",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Source/destination IP and logon events"
+        }
+      },
+      {
+        "id": "q5",
+        "type": "mcq",
+        "category": "Vulnerability Management",
+        "prompt": "CVSS primarily measures what?",
+        "answer": "A) Patch deployment speed",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) Severity characteristics of a vulnerability",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) Severity characteristics of a vulnerability"
+        }
+      },
+      {
+        "id": "q6",
+        "type": "mcq",
+        "category": "Cloud Security",
+        "prompt": "Which AWS service is commonly used to centrally detect misconfigurations across accounts?",
+        "answer": "A) Amazon Macie",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) AWS Config",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) AWS Config"
+        }
+      },
+      {
+        "id": "q7",
+        "type": "mcq",
+        "category": "Application Security",
+        "prompt": "Which issue is most directly prevented by parameterized SQL queries?",
+        "answer": "A) Cross-site request forgery",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) SQL injection",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) SQL injection"
+        }
+      },
+      {
+        "id": "q8",
+        "type": "mcq",
+        "category": "Endpoint Security",
+        "prompt": "Which artifact most strongly suggests PowerShell-based persistence on a Windows host?",
+        "answer": "A) A new browser bookmark",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) A scheduled task that launches an encoded command",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) A scheduled task that launches an encoded command"
+        }
+      },
+      {
+        "id": "q9",
+        "type": "mcq",
+        "category": "Threat Intelligence",
+        "prompt": "What is the main purpose of mapping alerts to the MITRE ATT&CK framework?",
+        "answer": "A) To encrypt endpoint telemetry",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: B) To categorize adversary tactics and techniques",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "B) To categorize adversary tactics and techniques"
+        }
+      },
+      {
+        "id": "q10",
+        "type": "mcq",
+        "category": "Governance, Risk, and Compliance",
+        "prompt": "Which control best demonstrates least privilege for privileged administrator access?",
+        "answer": "A) Shared admin credentials",
+        "result": {
+          "score": 0,
+          "max_score": 5,
+          "percentage": 0.0,
+          "feedback": "Incorrect. Expected: C) Just-in-time elevation with approval and logging",
+          "strengths": [],
+          "gaps": [
+            "Review the underlying concept in the rubric."
+          ],
+          "correct_answer": "C) Just-in-time elevation with approval and logging"
+        }
+      },
+      {
+        "id": "q11",
+        "type": "short_answer",
+        "category": "Incident Response",
+        "prompt": "Describe the first three actions you would take after confirming ransomware on a workstation in an active directory environment.",
+        "answer": "Contain the host, preserve logs, identify scope, notify stakeholders, and recover safely.",
+        "result": {
+          "score": 5.1,
+          "max_score": 10,
+          "percentage": 51.0,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      },
+      {
+        "id": "q12",
+        "type": "short_answer",
+        "category": "Cloud Security",
+        "prompt": "Explain the difference between security groups and NACLs in AWS networking.",
+        "answer": "Contain the host, preserve logs, identify scope, notify stakeholders, and recover safely.",
+        "result": {
+          "score": 3.5,
+          "max_score": 10,
+          "percentage": 35.0,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      },
+      {
+        "id": "q13",
+        "type": "short_answer",
+        "category": "Threat Intelligence",
+        "prompt": "How would you validate whether a newly published CVE is relevant to your organization?",
+        "answer": "Contain the host, preserve logs, identify scope, notify stakeholders, and recover safely.",
+        "result": {
+          "score": 3.5,
+          "max_score": 10,
+          "percentage": 35.0,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      },
+      {
+        "id": "q14",
+        "type": "scenario",
+        "category": "SOC Operations",
+        "prompt": "At 02:15, your SIEM alerts on multiple failed VPN logins followed by a successful login from an unusual country for a finance user. Outline your investigation and response steps over the next hour.",
+        "answer": "Contain the host, preserve logs, identify scope, notify stakeholders, and recover safely.",
+        "result": {
+          "score": 7.0,
+          "max_score": 20,
+          "percentage": 35.0,
+          "feedback": "Graded locally using rubric keyword coverage (OpenAI unavailable).",
+          "strengths": [],
+          "gaps": [
+            "Expand on rubric points for fuller credit"
+          ]
+        }
+      }
+    ]
+  },
+  "submitted_late": false,
+  "late_seconds": 0,
+  "security_violations": 1
+}
